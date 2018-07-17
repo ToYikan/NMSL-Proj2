@@ -90,6 +90,23 @@ src_server_EXTERNAL_OBJECTS =
 
 src_server: CMakeFiles/src_server.dir/main.cpp.o
 src_server: CMakeFiles/src_server.dir/build.make
+src_server: /usr/local/lib/libopencv_dnn.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_ml.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_objdetect.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_shape.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_stitching.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_superres.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_videostab.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_calib3d.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_features2d.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_flann.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_highgui.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_photo.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_video.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_videoio.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_imgcodecs.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_imgproc.3.4.2.dylib
+src_server: /usr/local/lib/libopencv_core.3.4.2.dylib
 src_server: CMakeFiles/src_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable src_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src_server.dir/link.txt --verbose=$(VERBOSE)

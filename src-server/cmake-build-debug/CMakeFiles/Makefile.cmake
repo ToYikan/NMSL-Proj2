@@ -21,6 +21,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/Compiler/Clang.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/Compiler/GNU.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/FindPackageMessage.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/Platform/Darwin-AppleClang-C.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/Platform/Darwin-AppleClang-CXX.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/Platform/Darwin-Clang-C.cmake"
@@ -34,6 +36,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.10.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.10.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.10.3/CMakeSystem.cmake"
+  "/usr/local/share/OpenCV/OpenCVConfig-version.cmake"
+  "/usr/local/share/OpenCV/OpenCVConfig.cmake"
+  "/usr/local/share/OpenCV/OpenCVModules-release.cmake"
+  "/usr/local/share/OpenCV/OpenCVModules.cmake"
   )
 
 # The corresponding makefile is:
