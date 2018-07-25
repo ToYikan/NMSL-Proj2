@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server
+CMAKE_SOURCE_DIR = /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/CMakeFiles /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,87 @@ src_server/fast:
 	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/build
 .PHONY : src_server/fast
 
+CharSegment.o: CharSegment.cpp.o
+
+.PHONY : CharSegment.o
+
+# target to build an object file
+CharSegment.cpp.o:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/CharSegment.cpp.o
+.PHONY : CharSegment.cpp.o
+
+CharSegment.i: CharSegment.cpp.i
+
+.PHONY : CharSegment.i
+
+# target to preprocess a source file
+CharSegment.cpp.i:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/CharSegment.cpp.i
+.PHONY : CharSegment.cpp.i
+
+CharSegment.s: CharSegment.cpp.s
+
+.PHONY : CharSegment.s
+
+# target to generate assembly for a file
+CharSegment.cpp.s:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/CharSegment.cpp.s
+.PHONY : CharSegment.cpp.s
+
+PlateDetection.o: PlateDetection.cpp.o
+
+.PHONY : PlateDetection.o
+
+# target to build an object file
+PlateDetection.cpp.o:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateDetection.cpp.o
+.PHONY : PlateDetection.cpp.o
+
+PlateDetection.i: PlateDetection.cpp.i
+
+.PHONY : PlateDetection.i
+
+# target to preprocess a source file
+PlateDetection.cpp.i:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateDetection.cpp.i
+.PHONY : PlateDetection.cpp.i
+
+PlateDetection.s: PlateDetection.cpp.s
+
+.PHONY : PlateDetection.s
+
+# target to generate assembly for a file
+PlateDetection.cpp.s:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateDetection.cpp.s
+.PHONY : PlateDetection.cpp.s
+
+PlateRecogonization.o: PlateRecogonization.cpp.o
+
+.PHONY : PlateRecogonization.o
+
+# target to build an object file
+PlateRecogonization.cpp.o:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecogonization.cpp.o
+.PHONY : PlateRecogonization.cpp.o
+
+PlateRecogonization.i: PlateRecogonization.cpp.i
+
+.PHONY : PlateRecogonization.i
+
+# target to preprocess a source file
+PlateRecogonization.cpp.i:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecogonization.cpp.i
+.PHONY : PlateRecogonization.cpp.i
+
+PlateRecogonization.s: PlateRecogonization.cpp.s
+
+.PHONY : PlateRecogonization.s
+
+# target to generate assembly for a file
+PlateRecogonization.cpp.s:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecogonization.cpp.s
+.PHONY : PlateRecogonization.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... src_server"
+	@echo "... CharSegment.o"
+	@echo "... CharSegment.i"
+	@echo "... CharSegment.s"
+	@echo "... PlateDetection.o"
+	@echo "... PlateDetection.i"
+	@echo "... PlateDetection.s"
+	@echo "... PlateRecogonization.o"
+	@echo "... PlateRecogonization.i"
+	@echo "... PlateRecogonization.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server
+CMAKE_SOURCE_DIR = /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/src_server.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/src_server.dir/flags.make
 
 CMakeFiles/src_server.dir/main.cpp.o: CMakeFiles/src_server.dir/flags.make
 CMakeFiles/src_server.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/src_server.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src_server.dir/main.cpp.o -c /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/src_server.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src_server.dir/main.cpp.o -c /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/main.cpp
 
 CMakeFiles/src_server.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src_server.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/main.cpp > CMakeFiles/src_server.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/main.cpp > CMakeFiles/src_server.dir/main.cpp.i
 
 CMakeFiles/src_server.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src_server.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/main.cpp -o CMakeFiles/src_server.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/main.cpp -o CMakeFiles/src_server.dir/main.cpp.s
 
 CMakeFiles/src_server.dir/main.cpp.o.requires:
 
@@ -81,14 +81,92 @@ CMakeFiles/src_server.dir/main.cpp.o.provides: CMakeFiles/src_server.dir/main.cp
 CMakeFiles/src_server.dir/main.cpp.o.provides.build: CMakeFiles/src_server.dir/main.cpp.o
 
 
+CMakeFiles/src_server.dir/PlateDetection.cpp.o: CMakeFiles/src_server.dir/flags.make
+CMakeFiles/src_server.dir/PlateDetection.cpp.o: ../PlateDetection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/src_server.dir/PlateDetection.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src_server.dir/PlateDetection.cpp.o -c /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.cpp
+
+CMakeFiles/src_server.dir/PlateDetection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src_server.dir/PlateDetection.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.cpp > CMakeFiles/src_server.dir/PlateDetection.cpp.i
+
+CMakeFiles/src_server.dir/PlateDetection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src_server.dir/PlateDetection.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.cpp -o CMakeFiles/src_server.dir/PlateDetection.cpp.s
+
+CMakeFiles/src_server.dir/PlateDetection.cpp.o.requires:
+
+.PHONY : CMakeFiles/src_server.dir/PlateDetection.cpp.o.requires
+
+CMakeFiles/src_server.dir/PlateDetection.cpp.o.provides: CMakeFiles/src_server.dir/PlateDetection.cpp.o.requires
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateDetection.cpp.o.provides.build
+.PHONY : CMakeFiles/src_server.dir/PlateDetection.cpp.o.provides
+
+CMakeFiles/src_server.dir/PlateDetection.cpp.o.provides.build: CMakeFiles/src_server.dir/PlateDetection.cpp.o
+
+
+CMakeFiles/src_server.dir/PlateRecogonization.cpp.o: CMakeFiles/src_server.dir/flags.make
+CMakeFiles/src_server.dir/PlateRecogonization.cpp.o: ../PlateRecogonization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/src_server.dir/PlateRecogonization.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src_server.dir/PlateRecogonization.cpp.o -c /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp
+
+CMakeFiles/src_server.dir/PlateRecogonization.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src_server.dir/PlateRecogonization.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp > CMakeFiles/src_server.dir/PlateRecogonization.cpp.i
+
+CMakeFiles/src_server.dir/PlateRecogonization.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src_server.dir/PlateRecogonization.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp -o CMakeFiles/src_server.dir/PlateRecogonization.cpp.s
+
+CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.requires:
+
+.PHONY : CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.requires
+
+CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.provides: CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.requires
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.provides.build
+.PHONY : CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.provides
+
+CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.provides.build: CMakeFiles/src_server.dir/PlateRecogonization.cpp.o
+
+
+CMakeFiles/src_server.dir/CharSegment.cpp.o: CMakeFiles/src_server.dir/flags.make
+CMakeFiles/src_server.dir/CharSegment.cpp.o: ../CharSegment.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/src_server.dir/CharSegment.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src_server.dir/CharSegment.cpp.o -c /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.cpp
+
+CMakeFiles/src_server.dir/CharSegment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src_server.dir/CharSegment.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.cpp > CMakeFiles/src_server.dir/CharSegment.cpp.i
+
+CMakeFiles/src_server.dir/CharSegment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src_server.dir/CharSegment.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.cpp -o CMakeFiles/src_server.dir/CharSegment.cpp.s
+
+CMakeFiles/src_server.dir/CharSegment.cpp.o.requires:
+
+.PHONY : CMakeFiles/src_server.dir/CharSegment.cpp.o.requires
+
+CMakeFiles/src_server.dir/CharSegment.cpp.o.provides: CMakeFiles/src_server.dir/CharSegment.cpp.o.requires
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/CharSegment.cpp.o.provides.build
+.PHONY : CMakeFiles/src_server.dir/CharSegment.cpp.o.provides
+
+CMakeFiles/src_server.dir/CharSegment.cpp.o.provides.build: CMakeFiles/src_server.dir/CharSegment.cpp.o
+
+
 # Object files for target src_server
 src_server_OBJECTS = \
-"CMakeFiles/src_server.dir/main.cpp.o"
+"CMakeFiles/src_server.dir/main.cpp.o" \
+"CMakeFiles/src_server.dir/PlateDetection.cpp.o" \
+"CMakeFiles/src_server.dir/PlateRecogonization.cpp.o" \
+"CMakeFiles/src_server.dir/CharSegment.cpp.o"
 
 # External object files for target src_server
 src_server_EXTERNAL_OBJECTS =
 
 src_server: CMakeFiles/src_server.dir/main.cpp.o
+src_server: CMakeFiles/src_server.dir/PlateDetection.cpp.o
+src_server: CMakeFiles/src_server.dir/PlateRecogonization.cpp.o
+src_server: CMakeFiles/src_server.dir/CharSegment.cpp.o
 src_server: CMakeFiles/src_server.dir/build.make
 src_server: /usr/local/lib/libopencv_dnn.3.4.2.dylib
 src_server: /usr/local/lib/libopencv_ml.3.4.2.dylib
@@ -108,7 +186,7 @@ src_server: /usr/local/lib/libopencv_imgcodecs.3.4.2.dylib
 src_server: /usr/local/lib/libopencv_imgproc.3.4.2.dylib
 src_server: /usr/local/lib/libopencv_core.3.4.2.dylib
 src_server: CMakeFiles/src_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable src_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable src_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -117,6 +195,9 @@ CMakeFiles/src_server.dir/build: src_server
 .PHONY : CMakeFiles/src_server.dir/build
 
 CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/main.cpp.o.requires
+CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/PlateDetection.cpp.o.requires
+CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.requires
+CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/CharSegment.cpp.o.requires
 
 .PHONY : CMakeFiles/src_server.dir/requires
 
@@ -125,6 +206,6 @@ CMakeFiles/src_server.dir/clean:
 .PHONY : CMakeFiles/src_server.dir/clean
 
 CMakeFiles/src_server.dir/depend:
-	cd /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/CMakeFiles/src_server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles/src_server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/src_server.dir/depend
 

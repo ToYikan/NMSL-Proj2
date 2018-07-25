@@ -6,11 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/main.cpp
-opencv2/imgproc/imgproc.hpp
-/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/opencv2/imgproc/imgproc.hpp
-opencv2/highgui/highgui.hpp
-/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/opencv2/highgui/highgui.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.cpp
+CharSegment.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.h
+
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.h
+opencv2/opencv.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
+
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.cpp
+PlateDetection.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.h
+
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.h
+opencv2/opencv.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
+
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp
+PlateRecogonization.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.h
+
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.h
+opencv2/opencv.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
+
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/main.cpp
+iostream
+-
+opencv2/opencv.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
+PlateDetection.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.h
+PlateRecogonization.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.h
+CharSegment.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.h
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h
@@ -840,10 +870,6 @@ opencv2/videoio.hpp
 opencv2/highgui/highgui_c.h
 /usr/local/include/opencv2/opencv2/highgui/highgui_c.h
 
-/usr/local/include/opencv2/highgui/highgui.hpp
-opencv2/highgui.hpp
-/usr/local/include/opencv2/highgui/opencv2/highgui.hpp
-
 /usr/local/include/opencv2/highgui/highgui_c.h
 opencv2/core/core_c.h
 /usr/local/include/opencv2/highgui/opencv2/core/core_c.h
@@ -867,10 +893,6 @@ opencv2/core.hpp
 /usr/local/include/opencv2/opencv2/core.hpp
 opencv2/imgproc/imgproc_c.h
 /usr/local/include/opencv2/opencv2/imgproc/imgproc_c.h
-
-/usr/local/include/opencv2/imgproc/imgproc.hpp
-opencv2/imgproc.hpp
-/usr/local/include/opencv2/imgproc/opencv2/imgproc.hpp
 
 /usr/local/include/opencv2/imgproc/imgproc_c.h
 opencv2/imgproc/types_c.h

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Haibara/Documents/GitHub/SNM-Proj2/src-server
+# Install script for directory: /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

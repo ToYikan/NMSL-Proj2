@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\..\..\usr\local\share\OpenCV\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug"/>
+				<Option working_dir="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug"/>
+				<Option working_dir="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug"/>
+				<Option working_dir="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="src_server">
-				<Option output="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/src_server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug"/>
+				<Option output="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/src_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 src_server"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 src_server"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="src_server/fast">
-				<Option output="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/src_server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug"/>
+				<Option output="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/src_server" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,29 +75,47 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 src_server/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 src_server/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/main.cpp">
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.cpp">
 			<Option target="src_server"/>
 		</Unit>
-		<Unit filename="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/CMakeLists.txt">
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.h">
+			<Option target="src_server"/>
+		</Unit>
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.cpp">
+			<Option target="src_server"/>
+		</Unit>
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.h">
+			<Option target="src_server"/>
+		</Unit>
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp">
+			<Option target="src_server"/>
+		</Unit>
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.h">
+			<Option target="src_server"/>
+		</Unit>
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/main.cpp">
+			<Option target="src_server"/>
+		</Unit>
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/../../../../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/../../../../../../usr/local/share/OpenCV/OpenCVConfig-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\share\OpenCV\"/>
 		</Unit>
-		<Unit filename="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/../../../../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/../../../../../../usr/local/share/OpenCV/OpenCVConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\share\OpenCV\"/>
 		</Unit>
-		<Unit filename="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/../../../../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/../../../../../../usr/local/share/OpenCV/OpenCVModules-release.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\share\OpenCV\"/>
 		</Unit>
-		<Unit filename="/Users/Haibara/Documents/GitHub/SNM-Proj2/src-server/../../../../../../usr/local/share/OpenCV/OpenCVModules.cmake">
+		<Unit filename="/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/../../../../../../usr/local/share/OpenCV/OpenCVModules.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\share\OpenCV\"/>
 		</Unit>
 	</Project>
