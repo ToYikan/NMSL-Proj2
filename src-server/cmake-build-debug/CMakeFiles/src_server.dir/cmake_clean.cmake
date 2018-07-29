@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/src_server.dir/main.cpp.o"
   "CMakeFiles/src_server.dir/PlateDetection.cpp.o"
-  "CMakeFiles/src_server.dir/PlateRecogonization.cpp.o"
+  "CMakeFiles/src_server.dir/PlateRecognition.cpp.o"
   "CMakeFiles/src_server.dir/CharSegment.cpp.o"
+  "CMakeFiles/src_server.dir/CharRecognition.cpp.o"
   "src_server.pdb"
   "src_server"
 )

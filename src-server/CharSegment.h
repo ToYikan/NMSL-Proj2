@@ -13,11 +13,12 @@ using namespace cv;
 class CharSegment {
 
 public:
-    static vector<vector<int>> process(Mat& inimg);
+    static vector<Mat> process(Mat&, Mat&);
 
 private:
     static vector<int> cutLeft(Mat& src, int Tsum, int left, int right);
     static int getColSum(Mat& bimg, int col);
+    static int count;
 
 };
 

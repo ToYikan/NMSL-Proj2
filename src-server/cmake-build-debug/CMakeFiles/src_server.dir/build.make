@@ -105,28 +105,28 @@ CMakeFiles/src_server.dir/PlateDetection.cpp.o.provides: CMakeFiles/src_server.d
 CMakeFiles/src_server.dir/PlateDetection.cpp.o.provides.build: CMakeFiles/src_server.dir/PlateDetection.cpp.o
 
 
-CMakeFiles/src_server.dir/PlateRecogonization.cpp.o: CMakeFiles/src_server.dir/flags.make
-CMakeFiles/src_server.dir/PlateRecogonization.cpp.o: ../PlateRecogonization.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/src_server.dir/PlateRecogonization.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src_server.dir/PlateRecogonization.cpp.o -c /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp
+CMakeFiles/src_server.dir/PlateRecognition.cpp.o: CMakeFiles/src_server.dir/flags.make
+CMakeFiles/src_server.dir/PlateRecognition.cpp.o: ../PlateRecognition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/src_server.dir/PlateRecognition.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src_server.dir/PlateRecognition.cpp.o -c /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecognition.cpp
 
-CMakeFiles/src_server.dir/PlateRecogonization.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src_server.dir/PlateRecogonization.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp > CMakeFiles/src_server.dir/PlateRecogonization.cpp.i
+CMakeFiles/src_server.dir/PlateRecognition.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src_server.dir/PlateRecognition.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecognition.cpp > CMakeFiles/src_server.dir/PlateRecognition.cpp.i
 
-CMakeFiles/src_server.dir/PlateRecogonization.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src_server.dir/PlateRecogonization.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp -o CMakeFiles/src_server.dir/PlateRecogonization.cpp.s
+CMakeFiles/src_server.dir/PlateRecognition.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src_server.dir/PlateRecognition.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecognition.cpp -o CMakeFiles/src_server.dir/PlateRecognition.cpp.s
 
-CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.requires:
+CMakeFiles/src_server.dir/PlateRecognition.cpp.o.requires:
 
-.PHONY : CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.requires
+.PHONY : CMakeFiles/src_server.dir/PlateRecognition.cpp.o.requires
 
-CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.provides: CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.requires
-	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.provides.build
-.PHONY : CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.provides
+CMakeFiles/src_server.dir/PlateRecognition.cpp.o.provides: CMakeFiles/src_server.dir/PlateRecognition.cpp.o.requires
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecognition.cpp.o.provides.build
+.PHONY : CMakeFiles/src_server.dir/PlateRecognition.cpp.o.provides
 
-CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.provides.build: CMakeFiles/src_server.dir/PlateRecogonization.cpp.o
+CMakeFiles/src_server.dir/PlateRecognition.cpp.o.provides.build: CMakeFiles/src_server.dir/PlateRecognition.cpp.o
 
 
 CMakeFiles/src_server.dir/CharSegment.cpp.o: CMakeFiles/src_server.dir/flags.make
@@ -153,20 +153,46 @@ CMakeFiles/src_server.dir/CharSegment.cpp.o.provides: CMakeFiles/src_server.dir/
 CMakeFiles/src_server.dir/CharSegment.cpp.o.provides.build: CMakeFiles/src_server.dir/CharSegment.cpp.o
 
 
+CMakeFiles/src_server.dir/CharRecognition.cpp.o: CMakeFiles/src_server.dir/flags.make
+CMakeFiles/src_server.dir/CharRecognition.cpp.o: ../CharRecognition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/src_server.dir/CharRecognition.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/src_server.dir/CharRecognition.cpp.o -c /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.cpp
+
+CMakeFiles/src_server.dir/CharRecognition.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src_server.dir/CharRecognition.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.cpp > CMakeFiles/src_server.dir/CharRecognition.cpp.i
+
+CMakeFiles/src_server.dir/CharRecognition.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src_server.dir/CharRecognition.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.cpp -o CMakeFiles/src_server.dir/CharRecognition.cpp.s
+
+CMakeFiles/src_server.dir/CharRecognition.cpp.o.requires:
+
+.PHONY : CMakeFiles/src_server.dir/CharRecognition.cpp.o.requires
+
+CMakeFiles/src_server.dir/CharRecognition.cpp.o.provides: CMakeFiles/src_server.dir/CharRecognition.cpp.o.requires
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/CharRecognition.cpp.o.provides.build
+.PHONY : CMakeFiles/src_server.dir/CharRecognition.cpp.o.provides
+
+CMakeFiles/src_server.dir/CharRecognition.cpp.o.provides.build: CMakeFiles/src_server.dir/CharRecognition.cpp.o
+
+
 # Object files for target src_server
 src_server_OBJECTS = \
 "CMakeFiles/src_server.dir/main.cpp.o" \
 "CMakeFiles/src_server.dir/PlateDetection.cpp.o" \
-"CMakeFiles/src_server.dir/PlateRecogonization.cpp.o" \
-"CMakeFiles/src_server.dir/CharSegment.cpp.o"
+"CMakeFiles/src_server.dir/PlateRecognition.cpp.o" \
+"CMakeFiles/src_server.dir/CharSegment.cpp.o" \
+"CMakeFiles/src_server.dir/CharRecognition.cpp.o"
 
 # External object files for target src_server
 src_server_EXTERNAL_OBJECTS =
 
 src_server: CMakeFiles/src_server.dir/main.cpp.o
 src_server: CMakeFiles/src_server.dir/PlateDetection.cpp.o
-src_server: CMakeFiles/src_server.dir/PlateRecogonization.cpp.o
+src_server: CMakeFiles/src_server.dir/PlateRecognition.cpp.o
 src_server: CMakeFiles/src_server.dir/CharSegment.cpp.o
+src_server: CMakeFiles/src_server.dir/CharRecognition.cpp.o
 src_server: CMakeFiles/src_server.dir/build.make
 src_server: /usr/local/lib/libopencv_dnn.3.4.2.dylib
 src_server: /usr/local/lib/libopencv_ml.3.4.2.dylib
@@ -186,7 +212,7 @@ src_server: /usr/local/lib/libopencv_imgcodecs.3.4.2.dylib
 src_server: /usr/local/lib/libopencv_imgproc.3.4.2.dylib
 src_server: /usr/local/lib/libopencv_core.3.4.2.dylib
 src_server: CMakeFiles/src_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable src_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable src_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -196,8 +222,9 @@ CMakeFiles/src_server.dir/build: src_server
 
 CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/main.cpp.o.requires
 CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/PlateDetection.cpp.o.requires
-CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/PlateRecogonization.cpp.o.requires
+CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/PlateRecognition.cpp.o.requires
 CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/CharSegment.cpp.o.requires
+CMakeFiles/src_server.dir/requires: CMakeFiles/src_server.dir/CharRecognition.cpp.o.requires
 
 .PHONY : CMakeFiles/src_server.dir/requires
 

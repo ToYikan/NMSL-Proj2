@@ -13,12 +13,14 @@ using namespace cv;
 class PlateDetection {
 
 public:
-    static Rect process(Mat);
+    static Mat process(Mat);
 
 private:
     static Mat on_Sobel(Mat);
 
     static Mat on_GaussianBlur(Mat);
+
+    static Rect plateSelect(Mat);
 
 };
 

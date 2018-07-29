@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.cpp
+
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.h
+opencv2/opencv.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
+
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.cpp
 CharSegment.h
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.h
@@ -22,11 +28,11 @@ PlateDetection.h
 opencv2/opencv.hpp
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
 
-/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.cpp
-PlateRecogonization.h
-/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecognition.cpp
+PlateRecognition.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecognition.h
 
-/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecognition.h
 opencv2/opencv.hpp
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
 
@@ -37,10 +43,12 @@ opencv2/opencv.hpp
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
 PlateDetection.h
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateDetection.h
-PlateRecogonization.h
-/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecogonization.h
+PlateRecognition.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/PlateRecognition.h
 CharSegment.h
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.h
+CharRecognition.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.h
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h

@@ -123,6 +123,33 @@ src_server/fast:
 	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/build
 .PHONY : src_server/fast
 
+CharRecognition.o: CharRecognition.cpp.o
+
+.PHONY : CharRecognition.o
+
+# target to build an object file
+CharRecognition.cpp.o:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/CharRecognition.cpp.o
+.PHONY : CharRecognition.cpp.o
+
+CharRecognition.i: CharRecognition.cpp.i
+
+.PHONY : CharRecognition.i
+
+# target to preprocess a source file
+CharRecognition.cpp.i:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/CharRecognition.cpp.i
+.PHONY : CharRecognition.cpp.i
+
+CharRecognition.s: CharRecognition.cpp.s
+
+.PHONY : CharRecognition.s
+
+# target to generate assembly for a file
+CharRecognition.cpp.s:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/CharRecognition.cpp.s
+.PHONY : CharRecognition.cpp.s
+
 CharSegment.o: CharSegment.cpp.o
 
 .PHONY : CharSegment.o
@@ -177,32 +204,32 @@ PlateDetection.cpp.s:
 	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateDetection.cpp.s
 .PHONY : PlateDetection.cpp.s
 
-PlateRecogonization.o: PlateRecogonization.cpp.o
+PlateRecognition.o: PlateRecognition.cpp.o
 
-.PHONY : PlateRecogonization.o
+.PHONY : PlateRecognition.o
 
 # target to build an object file
-PlateRecogonization.cpp.o:
-	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecogonization.cpp.o
-.PHONY : PlateRecogonization.cpp.o
+PlateRecognition.cpp.o:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecognition.cpp.o
+.PHONY : PlateRecognition.cpp.o
 
-PlateRecogonization.i: PlateRecogonization.cpp.i
+PlateRecognition.i: PlateRecognition.cpp.i
 
-.PHONY : PlateRecogonization.i
+.PHONY : PlateRecognition.i
 
 # target to preprocess a source file
-PlateRecogonization.cpp.i:
-	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecogonization.cpp.i
-.PHONY : PlateRecogonization.cpp.i
+PlateRecognition.cpp.i:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecognition.cpp.i
+.PHONY : PlateRecognition.cpp.i
 
-PlateRecogonization.s: PlateRecogonization.cpp.s
+PlateRecognition.s: PlateRecognition.cpp.s
 
-.PHONY : PlateRecogonization.s
+.PHONY : PlateRecognition.s
 
 # target to generate assembly for a file
-PlateRecogonization.cpp.s:
-	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecogonization.cpp.s
-.PHONY : PlateRecogonization.cpp.s
+PlateRecognition.cpp.s:
+	$(MAKE) -f CMakeFiles/src_server.dir/build.make CMakeFiles/src_server.dir/PlateRecognition.cpp.s
+.PHONY : PlateRecognition.cpp.s
 
 main.o: main.cpp.o
 
@@ -240,15 +267,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... src_server"
+	@echo "... CharRecognition.o"
+	@echo "... CharRecognition.i"
+	@echo "... CharRecognition.s"
 	@echo "... CharSegment.o"
 	@echo "... CharSegment.i"
 	@echo "... CharSegment.s"
 	@echo "... PlateDetection.o"
 	@echo "... PlateDetection.i"
 	@echo "... PlateDetection.s"
-	@echo "... PlateRecogonization.o"
-	@echo "... PlateRecogonization.i"
-	@echo "... PlateRecogonization.s"
+	@echo "... PlateRecognition.o"
+	@echo "... PlateRecognition.i"
+	@echo "... PlateRecognition.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

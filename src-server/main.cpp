@@ -1,8 +1,9 @@
 #include <iostream>
 #include "opencv2/opencv.hpp"
 #include "PlateDetection.h"
-#include "PlateRecogonization.h"
+#include "PlateRecognition.h"
 #include "CharSegment.h"
+#include "CharRecognition.h"
 using namespace std;
 using namespace cv;
 
@@ -12,32 +13,30 @@ int main()
         string filename = "/Users/Haibara/Desktop/carPicture/P" + to_string(i) + ".jpg";//打开的文件
         Mat srcImage = imread(filename, 1);
 
+        Mat midImage;
 
-        Rect r = PlateDetection::process(srcImage);
-
-        Mat result = PlateRecogonization::process(srcImage, r);
-
-//        rectangle(result, r, Scalar(0,0,255), 2);
+        midImage = PlateDetection::process(srcImage);
+//
+        Mat result = PlateRecognition::process(midImage);
 
 
-        namedWindow("Result", CV_WINDOW_NORMAL);
 
-        resizeWindow("Result", result.size().width, result.size().height + 22);
+//
+//        namedWindow("Result", CV_WINDOW_NORMAL);
+//
+//        resizeWindow("Result", result.size().width, result.size().height + 22);
 
-        vector<vector<int>> char_width = CharSegment::process(result);
+        vector<Mat> chars = CharSegment::process(midImage, result);
 
-//        for(vector<int> i : char_width){
-//            for(int j : i){
-//                cout << j << " ";
-//            }
-//            cout << endl;
-//        }
+        for(int j = 0; j < 7; ++j){
+            namedWindow("Src" + to_string(j), WINDOW_AUTOSIZE);
+            moveWindow("Src" + to_string(j), 500 + j * 25, 200);
+            imshow("Src" + to_string(j), chars.at(j));
 
-        for(int i = 0; i < 7; i++){
-            imshow("Result", result.colRange(char_width.at(i).at(0),
-                                             char_width.at(i).at(1)));
-            waitKey(0);
         }
+        waitKey(0);
+
+
     }
 
     return 0;

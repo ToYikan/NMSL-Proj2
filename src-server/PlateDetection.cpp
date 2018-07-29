@@ -4,9 +4,7 @@
 
 #include "PlateDetection.h"
 
-
-Rect PlateDetection::process(Mat srcImage) {
-
+Rect PlateDetection::plateSelect(Mat srcImage){
     int structElementSize = 2;
 
     Mat midImage, dstImage;
@@ -170,6 +168,75 @@ Rect PlateDetection::process(Mat srcImage) {
 //        rectangle(result, backup, Scalar(0,0,255), 2);
 
     return backup;
+}
+
+
+Mat PlateDetection::process(Mat srcImage) {
+    Rect r = plateSelect(srcImage);
+
+    Mat grayImage = srcImage(r);
+    cvtColor(grayImage, grayImage, COLOR_BGR2GRAY);
+
+    Canny(grayImage, grayImage, 50, 200, 3);
+
+
+    Size size = grayImage.size();
+
+    // 需要的是黑色背景
+    vector<Vec4i> lines;
+    HoughLinesP(grayImage, lines, 1, CV_PI/180, 50, 10, 5);
+
+
+    Mat disp_lines(size, CV_8UC1, Scalar(0, 0, 0));
+    double angle = 0.;
+    for (unsigned long i = 0; i < lines.size(); ++i)
+    {
+        line(disp_lines, Point(lines[i][0], lines[i][1]), Point(lines[i][2], lines[i][3]), Scalar(255, 255, 255));
+        angle += atan2((double)lines[i][3] - lines[i][1], (double)lines[i][2] - lines[i][0]);
+    }
+
+
+    if(lines.size() < 3){
+
+        lines.clear();
+        HoughLinesP(grayImage, lines, 1, CV_PI/180, 30, 20, 10);
+
+        disp_lines = Mat(size, CV_8UC1, Scalar(0, 0, 0));
+        double angle = 0.;
+        for (unsigned long i = 0; i < lines.size(); ++i)
+        {
+            line(disp_lines, Point(lines[i][0], lines[i][1]), Point(lines[i][2], lines[i][3]), Scalar(255, 255, 255));
+            angle += atan2((double)lines[i][3] - lines[i][1], (double)lines[i][2] - lines[i][0]);
+        }
+        angle /= lines.size(); // mean angle, in radians.
+        angle = angle * 180 / CV_PI;
+    }else{
+        angle /= lines.size(); // mean angle, in radians.
+        angle = angle * 180 / CV_PI;
+    }
+
+
+//    imshow("Src2", grayImage);
+//    waitKey(0);
+//
+//    imshow("Src", disp_lines);
+//    waitKey(0);
+
+    if(angle > 10 || angle < -10){
+        angle = 0;
+    }
+
+    cout << angle << endl;
+
+    Point center = Point(r.x + 1/2*r.width, r.y + 1/2*r.height);
+
+    Mat rot_mat = getRotationMatrix2D(center, angle, 1.0);
+
+    cv::warpAffine(srcImage, srcImage, rot_mat, srcImage.size(), INTER_CUBIC);
+
+    srcImage = srcImage(r);
+
+    return srcImage;
 }
 
 

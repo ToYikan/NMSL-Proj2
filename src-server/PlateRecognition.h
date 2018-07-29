@@ -11,10 +11,15 @@
 using namespace std;
 using namespace cv;
 
-class PlateRecogonization {
+class PlateRecognition {
 
 public:
-    static Mat process(Mat, Rect);
+    static Mat process(Mat);
+
+private:
+    static int getRowSum(Mat& img, int row);
+    static int getColSum(Mat& img, int col);
+    static void removeRivet (Mat& img);
 };
 
 
