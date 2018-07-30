@@ -155,7 +155,7 @@ Rect PlateDetection::plateSelect(Mat srcImage){
         return r_result;
     }
 
-    cout << "Wrong" << endl;
+//    cout << "Wrong" << endl;
     if(backup.width > 3.2 * backup.height){
         double l = (backup.width - 3.2 * backup.height) / 2;
         backup.x += l;
@@ -226,7 +226,7 @@ Mat PlateDetection::process(Mat srcImage) {
         angle = 0;
     }
 
-    cout << angle << endl;
+//    cout << angle << endl;
 
     Point center = Point(r.x + 1/2*r.width, r.y + 1/2*r.height);
 

@@ -7,10 +7,24 @@
 #IncludeRegexTransform: 
 
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.cpp
+CharRecognition.h
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.h
+math.h
+-
 
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharRecognition.h
 opencv2/opencv.hpp
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/opencv.hpp
+opencv2/core/core.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/core/core.hpp
+opencv2/imgproc/imgproc.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/imgproc/imgproc.hpp
+opencv2/imgcodecs/imgcodecs.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/imgcodecs/imgcodecs.hpp
+opencv2/highgui/highgui.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/highgui/highgui.hpp
+opencv2/ml/ml.hpp
+/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/opencv2/ml/ml.hpp
 
 /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/CharSegment.cpp
 CharSegment.h
@@ -125,6 +139,10 @@ opencv2/core/check.hpp
 /usr/local/include/opencv2/core/check.hpp
 opencv2/core/base.hpp
 -
+
+/usr/local/include/opencv2/core/core.hpp
+opencv2/core.hpp
+/usr/local/include/opencv2/core/opencv2/core.hpp
 
 /usr/local/include/opencv2/core/core_c.h
 opencv2/core/types_c.h
@@ -878,6 +896,10 @@ opencv2/videoio.hpp
 opencv2/highgui/highgui_c.h
 /usr/local/include/opencv2/opencv2/highgui/highgui_c.h
 
+/usr/local/include/opencv2/highgui/highgui.hpp
+opencv2/highgui.hpp
+/usr/local/include/opencv2/highgui/opencv2/highgui.hpp
+
 /usr/local/include/opencv2/highgui/highgui_c.h
 opencv2/core/core_c.h
 /usr/local/include/opencv2/highgui/opencv2/core/core_c.h
@@ -892,6 +914,10 @@ opencv2/videoio/videoio_c.h
 opencv2/core.hpp
 /usr/local/include/opencv2/opencv2/core.hpp
 
+/usr/local/include/opencv2/imgcodecs/imgcodecs.hpp
+opencv2/imgcodecs.hpp
+/usr/local/include/opencv2/imgcodecs/opencv2/imgcodecs.hpp
+
 /usr/local/include/opencv2/imgcodecs/imgcodecs_c.h
 opencv2/core/core_c.h
 /usr/local/include/opencv2/imgcodecs/opencv2/core/core_c.h
@@ -901,6 +927,10 @@ opencv2/core.hpp
 /usr/local/include/opencv2/opencv2/core.hpp
 opencv2/imgproc/imgproc_c.h
 /usr/local/include/opencv2/opencv2/imgproc/imgproc_c.h
+
+/usr/local/include/opencv2/imgproc/imgproc.hpp
+opencv2/imgproc.hpp
+/usr/local/include/opencv2/imgproc/opencv2/imgproc.hpp
 
 /usr/local/include/opencv2/imgproc/imgproc_c.h
 opencv2/imgproc/types_c.h
@@ -921,6 +951,10 @@ iostream
 -
 opencv2/ml/ml.inl.hpp
 -
+
+/usr/local/include/opencv2/ml/ml.hpp
+opencv2/ml.hpp
+/usr/local/include/opencv2/ml/opencv2/ml.hpp
 
 /usr/local/include/opencv2/ml/ml.inl.hpp
 

@@ -224,68 +224,70 @@ vector<Mat> CharSegment::process(Mat& srcImage, Mat& inimg)
         Mat m;
         Mat result = inimg(r);
 
+        m = srcImage(r);
 
-        m.create(40, 20, CV_8UC3);
 
-        for(int i = 0; i < m.rows; i++){
-            for(int j = 0; j < m.cols; j++){
-                m.at<char>(j, i) = 0;
-            }
-        }
-
-        cvtColor(m, m, COLOR_BGR2GRAY);
-
-        threshold(m, m, 120, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
-
-        if(result.size().height > 2 * result.size().width){
-            int width = 40 * result.size().width
-                         / result.size().height;
-            resize(result, result, Size(width, 40), 0, 0, INTER_CUBIC);
-            for(int i = 0; i < (20-width) / 2; i++){
-                for(int j = 0; j < 40; j++){
-                    m.at<char>(j, i) = 0;
-                }
-            }
-            for(int i = (20-width) / 2; i < (20+width) / 2; i++){
-                for(int j = 0; j < 40; j++){
-                    m.at<char>(j, i) = result.at<char>(j, i - (20-width) / 2);
-                }
-            }
-            for(int i = (20+width) / 2; i < 20; i++){
-                for(int j = 0; j < 40; j++){
-                    m.at<char>(j, i) = 0;
-                }
-            }
-        }else{
-            int height = 40 * result.size().height
-                        / (2 * result.size().width);
-            resize(result, result, Size(20, height), 0, 0, INTER_CUBIC);
-            for(int i = 0; i < 20; i++){
-                for(int j = 0; j < (40 - height) / 2; j++){
-                    m.at<char>(j, i) = 0;
-                }
-            }
-            for(int i = 0; i < 20; i++){
-                for(int j = (40 - height) / 2; j < (40 + height) / 2; j++){
-                    m.at<char>(j, i) = result.at<char>(j - (40 - height) / 2, i);
-                }
-            }
-            for(int i = 0; i < 20; i++){
-                for(int j = (40 + height) / 2; j < 40; j++){
-                    m.at<char>(j, i) = 0;
-                }
-            }
-        }
-
-        Mat element_x = getStructuringElement(MORPH_RECT,
-                                              Size(2, 1));
-
-        Mat element_y = getStructuringElement(MORPH_RECT,
-                                              Size(1, 2));
-
-        dilate(m, m, element_y, Point(-1, -1), 1);
-
-        erode(m, m, element_y, Point(-1, -1), 1);
+//        m.create(40, 20, CV_8UC3);
+//
+//        for(int i = 0; i < m.rows; i++){
+//            for(int j = 0; j < m.cols; j++){
+//                m.at<char>(j, i) = 0;
+//            }
+//        }
+//
+//        cvtColor(m, m, COLOR_BGR2GRAY);
+//
+//        threshold(m, m, 120, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
+//
+//        if(result.size().height > 2 * result.size().width){
+//            int width = 40 * result.size().width
+//                         / result.size().height;
+//            resize(result, result, Size(width, 40), 0, 0, INTER_CUBIC);
+//            for(int i = 0; i < (20-width) / 2; i++){
+//                for(int j = 0; j < 40; j++){
+//                    m.at<char>(j, i) = 0;
+//                }
+//            }
+//            for(int i = (20-width) / 2; i < (20+width) / 2; i++){
+//                for(int j = 0; j < 40; j++){
+//                    m.at<char>(j, i) = result.at<char>(j, i - (20-width) / 2);
+//                }
+//            }
+//            for(int i = (20+width) / 2; i < 20; i++){
+//                for(int j = 0; j < 40; j++){
+//                    m.at<char>(j, i) = 0;
+//                }
+//            }
+//        }else{
+//            int height = 40 * result.size().height
+//                        / (2 * result.size().width);
+//            resize(result, result, Size(20, height), 0, 0, INTER_CUBIC);
+//            for(int i = 0; i < 20; i++){
+//                for(int j = 0; j < (40 - height) / 2; j++){
+//                    m.at<char>(j, i) = 0;
+//                }
+//            }
+//            for(int i = 0; i < 20; i++){
+//                for(int j = (40 - height) / 2; j < (40 + height) / 2; j++){
+//                    m.at<char>(j, i) = result.at<char>(j - (40 - height) / 2, i);
+//                }
+//            }
+//            for(int i = 0; i < 20; i++){
+//                for(int j = (40 + height) / 2; j < 40; j++){
+//                    m.at<char>(j, i) = 0;
+//                }
+//            }
+//        }
+//
+//        Mat element_x = getStructuringElement(MORPH_RECT,
+//                                              Size(2, 1));
+//
+//        Mat element_y = getStructuringElement(MORPH_RECT,
+//                                              Size(1, 2));
+//
+//        dilate(m, m, element_y, Point(-1, -1), 1);
+//
+//        erode(m, m, element_y, Point(-1, -1), 1);
 
 
         char_mat.insert(char_mat.begin(), m);
