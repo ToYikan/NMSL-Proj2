@@ -7,12 +7,17 @@
 using namespace std;
 using namespace cv;
 
+#define PICNUM 41
+
 int main()
 {
-    CharRecognition::ANN_Train();
-    CharRecognition::ANN_Train_CH();
+//    CharRecognition::ANN_Train();
+//    CharRecognition::ANN_Train_CH();
+//    CharRecognition::ANN_Train_SP();
 
-    for(int i = 1; i <= 41; i++) {
+    int failCount = 0;
+
+    for(int i = 1; i <= PICNUM; i++) {
         string filename = "/Users/Haibara/Desktop/carPicture/P" + to_string(i) + ".jpg";//打开的文件
         Mat srcImage = imread(filename, 1);
 
@@ -43,7 +48,15 @@ int main()
                 vector<string> r = CharRecognition::process_ch(chars.at(j));
                 plate += r.at(0);
                 rate += stod(r.at(1)) / 7;
+
+            }else if(j == 1){
+
+                vector<string> r = CharRecognition::process_sp(chars.at(j));
+                plate += r.at(0);
+                rate += stod(r.at(1)) / 7;
+
             }else{
+
                 vector<string> r = CharRecognition::process(chars.at(j));
                 plate += r.at(0);
                 rate += stod(r.at(1)) / 7;
@@ -53,13 +66,18 @@ int main()
         }
 
         cout << "Plate:  " << plate << endl;
-        cout << "Rate:  " << rate << "%" << endl;
+        cout << "Probability:  " << rate << "%" << endl;
 
-        waitKey(0);
+        if(rate < 90){
+            failCount++;
+        }
 
-
+//        waitKey(0);
 
     }
+
+
+    cout << endl <<  "Total accuracy:  " << (double)(PICNUM - failCount) * 100 / PICNUM << "%" << endl;
 
     return 0;
 }

@@ -22,8 +22,10 @@ using namespace ml;
 #define SSIZE 5
 #define CLASS_NUM1 34
 #define CLASS_NUM2 30
-#define TOTALNUM1 1946
+#define CLASS_NUM3 24
+#define TOTALNUM1 1945
 #define TOTALNUM2 2043
+#define TOTALNUM3 (TOTALNUM1 - 663)
 
 class CharRecognition {
 
@@ -32,9 +34,13 @@ public:
 
     static vector<string> process_ch(Mat);
 
+    static vector<string> process_sp(Mat);
+
     static void ANN_Train();
 
     static void ANN_Train_CH();
+
+    static void ANN_Train_SP();
 
 private:
     static float calcMatValue(const Mat &image);

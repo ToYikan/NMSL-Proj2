@@ -64,8 +64,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="315">
+              <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -94,8 +94,8 @@
       <file leaf-file-name="CharSegment.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CharSegment.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3144">
-              <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+            <state relative-caret-position="211">
+              <caret line="289" column="43" lean-forward="true" selection-start-line="289" selection-start-column="43" selection-end-line="289" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -103,11 +103,17 @@
       <file leaf-file-name="CharRecognition.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CharRecognition.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="420" column="45" selection-start-line="420" selection-start-column="45" selection-end-line="420" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="224">
+              <caret line="172" column="90" selection-start-line="172" selection-start-column="90" selection-end-line="172" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.hpp" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/include/opencv2/core.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6340">
+              <caret line="3120" selection-start-line="3120" selection-end-line="3120" />
             </state>
           </provider>
         </entry>
@@ -115,8 +121,8 @@
       <file leaf-file-name="CharRecognition.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CharRecognition.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="462">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#120#149#0" expanded="true" />
               </folding>
@@ -128,9 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>src</find>
-      <find>draw</find>
-      <find>srcImage</find>
       <find>return</find>
       <find>result</find>
       <find>ml</find>
@@ -147,7 +150,6 @@
       <find>6</find>
       <find>load</find>
       <find>30</find>
-      <find>20</find>
       <find>5</find>
       <find>34</find>
       <find>classNum</find>
@@ -155,9 +157,13 @@
       <find>64</find>
       <find>CLASS_NUM</find>
       <find>TOTALNUM</find>
-      <find>wrong</find>
-      <find>cout</find>
       <find>math</find>
+      <find>8</find>
+      <find>15</find>
+      <find>20</find>
+      <find>cout</find>
+      <find>wrong</find>
+      <find>10</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -176,9 +182,9 @@
         <option value="$PROJECT_DIR$/PlateRecognization.cpp" />
         <option value="$PROJECT_DIR$/PlateRecognition.h" />
         <option value="$PROJECT_DIR$/PlateRecognition.cpp" />
-        <option value="$PROJECT_DIR$/CharSegment.cpp" />
-        <option value="$PROJECT_DIR$/CharRecognition.h" />
         <option value="$PROJECT_DIR$/PlateDetection.cpp" />
+        <option value="$PROJECT_DIR$/CharRecognition.h" />
+        <option value="$PROJECT_DIR$/CharSegment.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CharRecognition.cpp" />
       </list>
@@ -265,12 +271,12 @@
       <workItem from="1532398841067" duration="20105000" />
       <workItem from="1532428868560" duration="22039000" />
       <workItem from="1532499753777" duration="9000" />
-      <workItem from="1532500368506" duration="95295000" />
+      <workItem from="1532500368506" duration="105708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144533000" />
+    <option name="totallyTimeSpent" value="154946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -292,12 +298,12 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32882273" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32969698" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49717513" visible="true" weight="0.24391988" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49717513" visible="true" weight="0.24391988" />
       <window_info anchor="right" id="LuaJ" order="3" />
       <window_info anchor="bottom" id="TeamCity" order="7" weight="0.32969698" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info id="Structure" order="1" sideWeight="0.50282484" side_tool="true" weight="0.24391988" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.35636362" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.35636362" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -612,13 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/include/opencv2/core.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="576" column="17" selection-start-line="576" selection-start-column="17" selection-end-line="576" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PlateRecognition.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -640,13 +639,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PlateRecognition.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="78" column="17" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CharRecognition.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state relative-caret-position="462">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#120#149#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CharSegment.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="289" column="43" lean-forward="true" selection-start-line="289" selection-start-column="43" selection-end-line="289" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -657,37 +670,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PlateRecognition.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="78" column="17" lean-forward="true" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="315">
+          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CharSegment.cpp">
+    <entry file="file:///usr/local/include/opencv2/core.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3144">
-          <caret line="210" lean-forward="true" selection-start-line="210" selection-end-line="210" />
+        <state relative-caret-position="6340">
+          <caret line="3120" selection-start-line="3120" selection-end-line="3120" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CharRecognition.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="420" column="45" selection-start-line="420" selection-start-column="45" selection-end-line="420" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="172" column="90" selection-start-line="172" selection-start-column="90" selection-end-line="172" selection-end-column="90" />
         </state>
       </provider>
     </entry>

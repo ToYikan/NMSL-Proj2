@@ -214,9 +214,32 @@ vector<Mat> CharSegment::process(Mat& srcImage, Mat& inimg)
 
 //    waitKey(0);
 
-    vector<Mat> char_mat;
+    vector<Rect> sortedChars;
 
     for(Rect &r : chars){
+        if(sortedChars.size() == 0){
+            sortedChars.push_back(r);
+        }else{
+            if(r.x < sortedChars.front().x){
+                sortedChars.insert(sortedChars.begin(), r);
+            }else if(r.x > sortedChars.back().x){
+                sortedChars.push_back(r);
+            }else{
+                for(int i = 0; i < sortedChars.size(); i++){
+                    if(r.x > sortedChars.at(i).x && r.x < sortedChars.at(i+1).x){
+                        sortedChars.insert(sortedChars.begin()+ i + 1, r);
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    vector<Mat> char_mat;
+
+
+    for(Rect &r : sortedChars){
 //        cout << r.x << endl;
 //        cout << r.y << endl;
 //        cout << r.width << endl;
@@ -290,7 +313,7 @@ vector<Mat> CharSegment::process(Mat& srcImage, Mat& inimg)
 //        erode(m, m, element_y, Point(-1, -1), 1);
 
 
-        char_mat.insert(char_mat.begin(), m);
+        char_mat.push_back(m);
     }
 
     return char_mat;

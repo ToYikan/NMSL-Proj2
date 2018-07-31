@@ -1,16 +1,101 @@
 #include "CharRecognition.h"
-#include <math.h>
 
 vector<string> CharRecognition::process(Mat charMat){
 
     Ptr<ANN_MLP> ann = ANN_MLP::create();
 
-    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Desktop/ANN-Model.xml");
+    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/ANN-Model.xml");
 
     string chars[CLASS_NUM1] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-                                   "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
-                                   "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V",
-                                   "W", "X", "Y", "Z"};
+                                "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
+                                "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V",
+                                "W", "X", "Y", "Z"};
+
+    if(charMat.rows > 3 * charMat.cols){
+        vector<string> ret;
+        ret.push_back("1");
+        ret.push_back(to_string(100));
+        return ret;
+    }
+
+
+    Mat sampleMat;
+//
+//    vector<float> feat;
+//
+//    calcGradientFeat(charMat, feat);
+//    calcGrayFeat(charMat, feat);
+
+    cvtColor(charMat, charMat, CV_BGR2GRAY);
+    threshold(charMat, charMat, 120, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
+
+
+
+    int sum = 0;
+    for (int i = 0; i < charMat.rows; i++)
+    {
+        for(int j = 0; j < charMat.cols; j++){
+            sum += charMat.at<uchar>(i, j) / 255;
+        }
+    }
+
+    if (sum > 0.5 * charMat.rows * charMat.cols){
+        bitwise_not(charMat, charMat);
+    }
+
+    int h = charMat.rows;
+    int w = charMat.cols;
+    Mat transformMat = Mat::eye(2, 3, CV_32F); // 创建对角阵
+    int m = max(w, h);
+    transformMat.at<float>(0, 2) = m / 2 - w / 2;
+    transformMat.at<float>(1, 2) = m / 2 - h / 2;
+
+    // 仿射变换
+    Mat warpImage(m, m, charMat.type());
+    warpAffine(charMat, warpImage, transformMat, warpImage.size(), INTER_LINEAR, BORDER_CONSTANT, Scalar(0));
+
+    Mat out;
+    resize(warpImage, out, Size(MSIZE, MSIZE));
+//    imshow("sb", out);
+//    waitKey(0);
+
+//            calcGradientFeat(srcImage, feat);
+//            calcGrayFeat(srcImage, feat);
+    Mat feat = features(out, SSIZE);
+
+
+    float data[DIM];
+    for(int k = 0; k < DIM; k++){
+        data[k] = feat.at<float>(k);
+    }
+
+    // Set up training data Mat
+    sampleMat = Mat(1, DIM, CV_32F, data);
+
+    Mat responseMat;
+    ann->predict(sampleMat, responseMat);
+    Point maxLoc;
+    double maxVal = 0;
+    minMaxLoc(responseMat, nullptr, &maxVal, nullptr, &maxLoc);
+//    cout << responseMat;
+
+//    cout << "识别结果：" << chars[maxLoc.x] << "    相似度:" << maxVal * 100 << "%" << endl;
+
+    vector<string> ret;
+    ret.push_back(chars[maxLoc.x]);
+    ret.push_back(to_string(maxVal * 100 / 1.404));
+    return ret;
+}
+
+vector<string> CharRecognition::process_sp(Mat charMat){
+
+    Ptr<ANN_MLP> ann = ANN_MLP::create();
+
+    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/ANN-Model-SP.xml");
+
+    string chars[CLASS_NUM3] = {"A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
+                                "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V",
+                                "W", "X", "Y", "Z"};
 
 
     Mat sampleMat;
@@ -85,7 +170,7 @@ vector<string> CharRecognition::process_ch(Mat charMat){
 
     Ptr<ANN_MLP> ann = ANN_MLP::create();
 
-    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Desktop/ANN-Model-CH.xml");
+    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/ANN-Model-CH.xml");
 
     string chars[CLASS_NUM2] = {"云", "京", "冀", "吉", "宁", "川", "新", "晋", "桂", "沪",
                                 "津", "浙", "渝", "湘", "琼", "甘", "皖", "粤", "苏", "蒙",
@@ -147,6 +232,7 @@ vector<string> CharRecognition::process_ch(Mat charMat){
 
     Mat responseMat;
     ann->predict(sampleMat, responseMat);
+
     Point maxLoc;
     double maxVal = 0;
     minMaxLoc(responseMat, nullptr, &maxVal, nullptr, &maxLoc);
@@ -160,6 +246,136 @@ vector<string> CharRecognition::process_ch(Mat charMat){
     return ret;
 }
 
+void CharRecognition::ANN_Train_SP()
+{
+    const string perFileReadPath = "/Users/Haibara/Desktop/LPCharSamples";
+
+    const int maxNum = 130;
+
+    string chars[CLASS_NUM3] = {"A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
+                                "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V",
+                                "W", "X", "Y", "Z"};
+
+//    vector<float> feat;
+
+    float trainingData[TOTALNUM3][DIM];
+
+    float labels[TOTALNUM3][CLASS_NUM3] = { { 0 } };//训练样本标签
+
+
+    int count = 0;
+
+    for (int i = 0; i < CLASS_NUM3; i++)//不同类
+    {
+        int sampleNumPerClass;//训练字符每类数量
+
+        string temp = chars[i];
+
+        for(int j = 0; j < maxNum; j++){
+
+            Mat srcImage = imread(perFileReadPath + "/" + temp + "/I" + to_string(j+1) + ".png");
+
+            if(srcImage.data == NULL){
+                sampleNumPerClass = j;
+                break;
+            }
+
+        }
+
+        for(int j = 0; j < sampleNumPerClass; j++){
+
+            Mat srcImage = imread(perFileReadPath + "/" + temp + "/I" + to_string(j+1) + ".png");
+
+            if(srcImage.data != NULL){
+                cvtColor(srcImage, srcImage, CV_BGR2GRAY);
+                threshold(srcImage, srcImage, 120, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
+
+                int h = srcImage.rows;
+                int w = srcImage.cols;
+                Mat transformMat = Mat::eye(2, 3, CV_32F); // 创建对角阵
+                int m = max(w, h);
+                transformMat.at<float>(0, 2) = m / 2 - w / 2;
+                transformMat.at<float>(1, 2) = m / 2 - h / 2;
+
+                // 仿射变换
+                Mat warpImage(m, m, srcImage.type());
+                warpAffine(srcImage, warpImage, transformMat, warpImage.size(), INTER_LINEAR, BORDER_CONSTANT, Scalar(0));
+
+                Mat out;
+                resize(warpImage, out, Size(MSIZE, MSIZE));
+
+//            calcGradientFeat(srcImage, feat);
+//            calcGrayFeat(srcImage, feat);
+                Mat feat = features(out, SSIZE);
+
+                for(int k = 0; k < DIM; k++){
+                    trainingData[count][k] = feat.at<float>(k);
+
+                }
+
+                // Set up label data
+                for (int k = 0; k < CLASS_NUM3; ++k)
+                {
+                    if (k == i)
+                        labels[count][k] = 1;
+                    else
+                        labels[count][k] = 0;
+                }
+
+                for(int k = 0; k < DIM; k++){
+                    cout << trainingData[count][k] << " ";
+                }
+                cout << endl;
+
+
+
+                count++;
+            }
+
+        }
+
+    }
+
+//
+//
+//    if (!feat.empty())
+//    {
+//        memcpy(trainingData, &feat[0], feat.size()*sizeof(float));
+//    }
+
+    // Set up training data Mat
+    Mat trainingDataMat(TOTALNUM3, DIM, CV_32F, trainingData);
+    cout << "trainingDataMat——OK！" << endl;
+
+
+    Mat labelsMat(TOTALNUM3, CLASS_NUM3, CV_32F, labels);
+    cout << "labelsMat——OK！" << endl;
+
+    //训练代码
+    cout << "training start...." << endl;
+
+    int ar[]={DIM, DIM, CLASS_NUM3};
+    Mat layerSizes(1,3,CV_32S,ar);
+
+    Ptr<ANN_MLP> ann = ANN_MLP::create();
+    ann->setLayerSizes(layerSizes);
+    ann->setActivationFunction(ANN_MLP::SIGMOID_SYM);
+
+    ann->setTrainMethod(ANN_MLP::BACKPROP);
+    ann->setBackpropMomentumScale(0.1);
+    ann->setBackpropWeightScale(0.1);
+    ann->setTermCriteria(TermCriteria(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 5000, /*FLT_EPSILON*/1e-4));
+
+    Ptr<TrainData> tData = TrainData::create(trainingDataMat, ROW_SAMPLE, labelsMat);
+
+    ann->train(tData);
+
+    ann->save("/Users/Haibara/Desktop/ANN-Model-SP.xml"); //save classifier
+
+    cout << "training finish...Model saved " << endl;
+
+}
+
 void CharRecognition::ANN_Train()
 {
     const string perFileReadPath = "/Users/Haibara/Desktop/LPCharSamples";
@@ -167,9 +383,9 @@ void CharRecognition::ANN_Train()
     const int maxNum = 130;
 
     string chars[CLASS_NUM1] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-                "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
-                "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V",
-                "W", "X", "Y", "Z"};
+                                "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
+                                "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V",
+                                "W", "X", "Y", "Z"};
 
 //    vector<float> feat;
 
@@ -264,17 +480,13 @@ void CharRecognition::ANN_Train()
 
 
     Mat labelsMat(TOTALNUM1, CLASS_NUM1, CV_32F, labels);
-    cout << "labelsMat:" << endl;
-    ofstream outfile("out.txt");
-    outfile << labelsMat;
-    //cout<<labelsMat<<endl;
     cout << "labelsMat——OK！" << endl;
 
     //训练代码
 
     cout << "training start...." << endl;
 
-    int ar[]={DIM, (int)sqrt(DIM * CLASS_NUM1), CLASS_NUM1};
+    int ar[]={DIM, DIM, CLASS_NUM1};
     Mat layerSizes(1,3,CV_32S,ar);
 
     Ptr<ANN_MLP> ann = ANN_MLP::create();
@@ -284,7 +496,7 @@ void CharRecognition::ANN_Train()
     ann->setTrainMethod(ANN_MLP::BACKPROP);
     ann->setBackpropMomentumScale(0.1);
     ann->setBackpropWeightScale(0.1);
-    ann->setTermCriteria(TermCriteria(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 10000, /*FLT_EPSILON*/1e-4));
+    ann->setTermCriteria(TermCriteria(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 5000, /*FLT_EPSILON*/1e-4));
 
     Ptr<TrainData> tData = TrainData::create(trainingDataMat, ROW_SAMPLE, labelsMat);
 
@@ -294,8 +506,8 @@ void CharRecognition::ANN_Train()
 
     cout << "training finish...Model saved " << endl;
 
-    return ;
 }
+
 
 void CharRecognition::ANN_Train_CH()
 {
@@ -408,17 +620,13 @@ void CharRecognition::ANN_Train_CH()
 
 
     Mat labelsMat(TOTALNUM2, CLASS_NUM2, CV_32F, labels);
-    cout << "labelsMat:" << endl;
-    ofstream outfile("out.txt");
-    outfile << labelsMat;
-    //cout<<labelsMat<<endl;
     cout << "labelsMat——OK！" << endl;
 
     //训练代码
 
     cout << "training start...." << endl;
 
-    int ar[]={DIM, (int)sqrt(DIM * CLASS_NUM2), CLASS_NUM2};
+    int ar[]={DIM, DIM, CLASS_NUM2};
     Mat layerSizes(1,3,CV_32S,ar);
 
     Ptr<ANN_MLP> ann = ANN_MLP::create();
@@ -428,7 +636,7 @@ void CharRecognition::ANN_Train_CH()
     ann->setTrainMethod(ANN_MLP::BACKPROP);
     ann->setBackpropMomentumScale(0.1);
     ann->setBackpropWeightScale(0.1);
-    ann->setTermCriteria(TermCriteria(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 10000, /*FLT_EPSILON*/1e-4));
+    ann->setTermCriteria(TermCriteria(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 5000, /*FLT_EPSILON*/1e-4));
 
     Ptr<TrainData> tData = TrainData::create(trainingDataMat, ROW_SAMPLE, labelsMat);
 
@@ -438,7 +646,6 @@ void CharRecognition::ANN_Train_CH()
 
     cout << "training finish...Model saved " << endl;
 
-    return ;
 }
 
 float CharRecognition::calcMatValue(const Mat &image)
