@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,11 +24,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainclient.cpp
+        mainclient.cpp \
+    forgetpassword.cpp \
+    login.cpp \
+    mainclient_msg.cpp
 
-HEADERS  += mainclient.h
+HEADERS  += mainclient.h \
+    forgetpassword.h \
+    login.h
 
-FORMS    += mainclient.ui
+FORMS    += mainclient.ui \
+    forgetpassword.ui \
+    login.ui
 
 RESOURCES += \
     ../Resources/resources.qrc

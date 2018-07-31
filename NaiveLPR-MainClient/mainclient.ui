@@ -24,9 +24,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QFrame{
-	background: rgba(255, 255, 255, 0);
-	border-image:url(:/bg5.png);
+     <string notr="true">QFrame
+{
+	background:rgba(255, 255, 255, 255);
+	border-image:url(:/bg4.png);
 }</string>
     </property>
     <property name="frameShape">
@@ -39,7 +40,7 @@
      <property name="geometry">
       <rect>
        <x>39</x>
-       <y>620</y>
+       <y>630</y>
        <width>203</width>
        <height>61</height>
       </rect>
@@ -231,7 +232,7 @@ QPushButton:hover{
         <x>20</x>
         <y>140</y>
         <width>200</width>
-        <height>200</height>
+        <height>210</height>
        </rect>
       </property>
       <property name="font">
@@ -258,7 +259,7 @@ background: rgb(248, 248, 248);
 }</string>
       </property>
       <property name="title">
-       <string> Profile </string>
+       <string>  Profile  </string>
       </property>
       <widget class="QLabel" name="label_3">
        <property name="geometry">
@@ -330,7 +331,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>54</x>
-         <y>68</y>
+         <y>72</y>
          <width>61</width>
          <height>20</height>
         </rect>
@@ -363,7 +364,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>110</x>
-         <y>68</y>
+         <y>72</y>
          <width>91</width>
          <height>20</height>
         </rect>
@@ -422,7 +423,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>25</x>
-         <y>70</y>
+         <y>74</y>
          <width>18</width>
          <height>16</height>
         </rect>
@@ -448,7 +449,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>25</x>
-         <y>100</y>
+         <y>107</y>
          <width>18</width>
          <height>16</height>
         </rect>
@@ -474,7 +475,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>54</x>
-         <y>98</y>
+         <y>105</y>
          <width>61</width>
          <height>20</height>
         </rect>
@@ -507,7 +508,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>110</x>
-         <y>98</y>
+         <y>105</y>
          <width>91</width>
          <height>20</height>
         </rect>
@@ -540,7 +541,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>67</x>
-         <y>147</y>
+         <y>156</y>
          <width>18</width>
          <height>16</height>
         </rect>
@@ -566,7 +567,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>166</y>
+         <y>175</y>
          <width>181</width>
          <height>20</height>
         </rect>
@@ -599,7 +600,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>96</x>
-         <y>146</y>
+         <y>155</y>
          <width>61</width>
          <height>20</height>
         </rect>
@@ -632,7 +633,7 @@ background: none;
        <property name="geometry">
         <rect>
          <x>2</x>
-         <y>132</y>
+         <y>140</y>
          <width>196</width>
          <height>2</height>
         </rect>
@@ -662,7 +663,7 @@ background: none;
       <property name="geometry">
        <rect>
         <x>2</x>
-        <y>580</y>
+        <y>600</y>
         <width>237</width>
         <height>2</height>
        </rect>
@@ -730,13 +731,13 @@ QTabBar::tab:selected {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:none;</string>
+        <string notr="true">QLabel{
+	border-image:url(:/welcome2.png);
+	background: none;
+}</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../Resources/resources.qrc">:/welcome2.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -821,7 +822,7 @@ QProgressBar {
      <property name="geometry">
       <rect>
        <x>49</x>
-       <y>490</y>
+       <y>510</y>
        <width>80</width>
        <height>78</height>
       </rect>
@@ -883,7 +884,7 @@ QPushButton:checked{
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>490</y>
+       <y>510</y>
        <width>80</width>
        <height>78</height>
       </rect>
@@ -945,7 +946,7 @@ QPushButton:checked{
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>390</y>
+       <y>410</y>
        <width>80</width>
        <height>78</height>
       </rect>
@@ -1007,7 +1008,7 @@ QPushButton:checked{
      <property name="geometry">
       <rect>
        <x>49</x>
-       <y>390</y>
+       <y>410</y>
        <width>80</width>
        <height>78</height>
       </rect>
@@ -1081,8 +1082,6 @@ QPushButton:checked{
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="../Resources/resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

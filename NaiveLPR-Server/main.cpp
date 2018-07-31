@@ -1,11 +1,11 @@
-#include "login.h"
+#include "TCPConnection.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Login *w = new Login;
-    w->show();
+    SQLTool::connection();
+    TCPConnection w;
 
     return a.exec();
 }
