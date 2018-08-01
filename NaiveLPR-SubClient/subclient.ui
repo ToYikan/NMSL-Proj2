@@ -1169,17 +1169,6 @@ QPushButton:hover{
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <zorder>checkBox_2</zorder>
-       <zorder>lineEdit_4</zorder>
-       <zorder>lineEdit_3</zorder>
-       <zorder>label_18</zorder>
-       <zorder>lineEdit_3</zorder>
-       <zorder>label_18</zorder>
-       <zorder>label_17</zorder>
-       <zorder>horizontalLayoutWidget_2</zorder>
-       <zorder>label_pass</zorder>
-       <zorder>label_19</zorder>
-       <zorder>label_20</zorder>
       </widget>
      </widget>
     </widget>
@@ -1221,6 +1210,16 @@ QProgressBar {
        <width>640</width>
        <height>510</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	background: rgba(248, 248, 248, 200);
+	border-image:none;
+	border: 2px solid rgb(200, 200, 200);
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page_3">
       <widget class="QFrame" name="frame_3">
@@ -1646,7 +1645,431 @@ QPushButton:hover{
        <zorder>label_26</zorder>
       </widget>
      </widget>
-     <widget class="QWidget" name="page_4"/>
+     <widget class="QWidget" name="page_4">
+      <widget class="QLabel" name="label_vehicleFromPic">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>200</width>
+         <height>200</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background: none;
+	border-image:none;
+	border-radius:7px;
+	border: 2px solid rgb(179, 179, 179);
+	color: rgb(76, 76, 76);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>Enter Highway Picture</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_vehicleTarPic">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>200</width>
+         <height>200</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background: none;
+	border-image:none;
+	border-radius:7px;
+	border: 2px solid rgb(179, 179, 179);
+	color: rgb(76, 76, 76);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>Leave Highway Picture</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_EnterHighwayTimeTip">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>10</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background: none;
+	border-image:none;
+	border-radius:7px;
+	border: 2px solid rgb(179, 179, 179);
+	color: rgb(76, 76, 76);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Enter highway time:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_EnterHighwayTimeTip_2">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>260</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background: none;
+	border-image:none;
+	border-radius:7px;
+	border: 2px solid rgb(179, 179, 179);
+	color: rgb(76, 76, 76);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>Enter highway time:</string>
+       </property>
+      </widget>
+      <widget class="QDateTimeEdit" name="dateTimeEdit_vehicleFromDatetime">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>100</y>
+         <width>140</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QdateTimeEdit{
+rgb(102, 255, 204);
+font: 57 9pt &quot;Helvetica-Narrow-Bold&quot;;
+background-color: rgba(100, 225, 100, 30);/*背景色*/
+     border-style: outset; /*边框样式*/
+     border-width: 4px;  /*边框宽度为4像素*/
+     border-radius: 10px; /*边框圆角半径*/
+     border-color: rgba(255, 225, 255, 30);/*边框颜色*/
+}</string>
+       </property>
+      </widget>
+      <widget class="QDateTimeEdit" name="dateTimeEdit_vehicleTarDateTime">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>345</y>
+         <width>140</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QdateTimeEdit{
+rgb(102, 255, 204);
+font: 57 9pt &quot;Helvetica-Narrow-Bold&quot;;
+background-color: rgba(100, 225, 100, 30);/*背景色*/
+     border-style: outset; /*边框样式*/
+     border-width: 4px;  /*边框宽度为4像素*/
+     border-radius: 10px; /*边框圆角半径*/
+     border-color: rgba(255, 225, 255, 30);/*边框颜色*/
+}</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_EnterhighwayPic">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>170</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border: 2px solid rgba(15, 128, 255, 193);
+	background:rgba(15, 128, 255, 93);
+	border-radius:10px;
+	color: rgb(76, 76, 76);
+	font: 75 13pt &quot;Helvetica&quot; bold;
+}
+
+QPushButton:hover{
+	border: 2px solid rgba(15, 128, 255, 193);
+	background:rgba(15, 128, 255, 43);
+	border-radius:10px;
+	color: rgb(76, 76, 76);
+	font: 75 14pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>Enter highway picture</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_leaveHighwayPic">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>420</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border: 2px solid rgba(15, 128, 255, 193);
+	background:rgba(15, 128, 255, 93);
+	border-radius:10px;
+	color: rgb(76, 76, 76);
+	font: 75 13pt &quot;Helvetica&quot; bold;
+}
+
+QPushButton:hover{
+	border: 2px solid rgba(15, 128, 255, 193);
+	background:rgba(15, 128, 255, 43);
+	border-radius:10px;
+	color: rgb(76, 76, 76);
+	font: 75 14pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>Leave highway picture</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_withoutETCwarning">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>10</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QLabel{
+	background: none;
+	border-image:none;
+	border: 0px;
+	color: rgb(255, 75, 20);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>No ETC Server!</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_ETCPlateTip">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>170</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background: none;
+	border-image:none;
+	border-radius:7px;
+	border: 2px solid rgb(179, 179, 179);
+	color: rgb(76, 76, 76);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Plate:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_ETCPlate">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>260</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background: none;
+	border-image:none;
+	border-radius:7px;
+	border: 2px solid rgb(179, 179, 179);
+	color: rgb(76, 76, 76);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_ETCCostTip">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>340</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background: none;
+	border-image:none;
+	border-radius:7px;
+	border: 2px solid rgb(179, 179, 179);
+	color: rgb(76, 76, 76);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Cost:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_ETCCost">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>420</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background: none;
+	border-image:none;
+	border-radius:7px;
+	border: 2px solid rgb(179, 179, 179);
+	color: rgb(76, 76, 76);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_ETCdifferentPlatewarning">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>80</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QLabel{
+	background: none;
+	border-image:none;
+	border: 0px;
+	color: rgb(255, 75, 20);
+	font: 75 15pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>Plates are Not Same!</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_confirmEnterHighwayPic">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>215</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border: 2px solid rgb(179, 179, 179);
+	border-radius:10px;
+	background:rgba(248, 248, 248,220);
+	color: rgb(76, 76, 76);
+	font: 75 14pt &quot;Helvetica&quot; bold ;
+}
+
+QPushButton:hover{
+	border: 2px solid rgb(15, 128, 255);
+	background:rgba(15, 128, 255, 43);
+	border-radius:10px;
+	color: rgb(76, 76, 76);
+	font: 75 14pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_confirmLeaveHighwayPic">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>464</y>
+         <width>140</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	border: 2px solid rgb(179, 179, 179);
+	border-radius:10px;
+	background:rgba(248, 248, 248,220);
+	color: rgb(76, 76, 76);
+	font: 75 14pt &quot;Helvetica&quot; bold ;
+}
+
+QPushButton:hover{
+	border: 2px solid rgb(15, 128, 255);
+	background:rgba(15, 128, 255, 43);
+	border-radius:10px;
+	color: rgb(76, 76, 76);
+	font: 75 14pt &quot;Helvetica&quot; bold;
+}</string>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_EnterPicPath">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>190</y>
+         <width>72</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_LeavePicPath">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>440</y>
+         <width>72</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
     </widget>
     <widget class="QProgressBar" name="progressBar_2">
      <property name="geometry">

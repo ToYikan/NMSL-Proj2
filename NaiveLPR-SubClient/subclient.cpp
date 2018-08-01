@@ -99,6 +99,19 @@ SubClient::SubClient(QWidget *parent) :
     ui->label_showNewPortrait->setAcceptDrops(true);
 
     ui->progressBar_2->setVisible(false);
+
+    ui->label_vehicleFromPic->installEventFilter(this);
+    ui->label_vehicleTarPic->installEventFilter(this);
+    ui->label_vehicleFromPic->setAcceptDrops(true);
+    ui->label_vehicleTarPic->setAcceptDrops(true);
+    ui->label_EnterPicPath->setVisible(false);
+    ui->label_LeavePicPath->setVisible(false);
+    ui->dateTimeEdit_vehicleFromDatetime->setDateTime(QDateTime::currentDateTime());
+    ui->dateTimeEdit_vehicleTarDateTime->setDateTime(QDateTime::currentDateTime());
+    ui->dateTimeEdit_vehicleFromDatetime->setDisplayFormat("yyyy-MM-dd hh:mm:ss");
+    ui->dateTimeEdit_vehicleTarDateTime->setDisabled("yyyy-MM-dd hh:mm:ss");
+    ui->dateTimeEdit_vehicleFromDatetime->setCalendarPopup(true);
+    ui->dateTimeEdit_vehicleTarDateTime->setCalendarPopup(true);
 }
 
 SubClient::~SubClient()
@@ -473,3 +486,103 @@ void SubClient::progressBar_fast()
     ui->progressBar_2->setVisible(false);
 }
 
+
+void SubClient::on_pushButton_EnterhighwayPic_clicked()
+{
+    QStringList enterHighwayPic = QFileDialog::getOpenFileNames(this, tr("open file"), "/Users/Haibara/Desktop",
+                                                                tr("图片文件(*png *jpg)"));
+
+    if(enterHighwayPic.isEmpty()){
+        return;
+    }
+
+    QImage tempEnterPic = enterHighwayPic.at(0);
+    QPixmap EnterPic = QPixmap::fromImage(tempEnterPic.scaled(200, 200, Qt::KeepAspectRatio,
+                                          Qt::SmoothTransformation));
+    ui->label_EnterPicPath->setText(enterHighwayPic.at(0));
+    ui->label_vehicleFromPic->setPixmap(EnterPic);
+    ui->label_vehicleFromPic->show();
+}
+
+void SubClient::on_pushButton_leaveHighwayPic_clicked()
+{
+    QStringList leaveHighwayPic = QFileDialog::getOpenFileNames(this, tr("open file"), "/Users/Haibara/Desktop",
+                                                                tr("图片文件(*png *jpg)"));
+    if(leaveHighwayPic.isEmpty()){
+        return;
+    }
+
+    QImage tempLeavePic = leaveHighwayPic.at(0);
+    QPixmap LeavePic = QPixmap::fromImage(tempLeavePic.scaled(200, 200, Qt::KeepAspectRatio,
+                                                              Qt::SmoothTransformation));
+    ui->label_LeavePicPath->setText(leaveHighwayPic.at(0));
+    ui->label_vehicleTarPic->setPixmap(LeavePic);
+    ui->label_vehicleTarPic->show();
+}
+
+
+void SubClient::on_pushButton_confirmEnterHighwayPic_clicked()
+{
+    QString enter_highway_datetime = ui->dateTimeEdit_vehicleFromDatetime->dateTime().toString();
+    QString enterHighwayPicName = enter_highway_datetime + ".png";
+
+    QString EnterPicPath = ui->label_EnterPicPath->text();
+
+    QBuffer buffer;
+    QByteArray message;
+    QDataStream out(&message, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_7);
+    buffer.open(QIODevice::ReadWrite);
+    QImage img;
+    img.load(EnterPicPath);
+    img.save(&buffer, "png");
+    out << qint32(buffer.size());
+    out << QString("/plates/" + enterHighwayPicName.split(".").at(0) + ".png");
+    out << buffer.data();
+
+    m_socket->write(message);
+    m_socket->flush();
+
+    QElapsedTimer t;
+    t.start();
+    while (t.elapsed() < 500) {
+        QCoreApplication::processEvents();
+    }
+    QStringList list;
+    list.append("ETCp_sendEnterPic");
+    list.append(enterHighwayPicName);
+    sendMessage(list);
+}
+
+void SubClient::on_pushButton_confirmLeaveHighwayPic_clicked()
+{
+    QString leave_highway_datetime = ui->dateTimeEdit_vehicleTarDateTime->dateTime().toString();
+    QString leaveHighwayPicName = leave_highway_datetime + ".png";
+
+    QString LeavePicPath = ui->label_LeavePicPath->text();
+
+    QBuffer buffer;
+    QByteArray message;
+    QDataStream out(&message, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_7);
+    buffer.open(QIODevice::ReadWrite);
+    QImage img;
+    img.load(LeavePicPath);
+    img.save(&buffer, "png");
+    out << qint32(buffer.size());
+    out << QString("/plates/" + leaveHighwayPicName.split(".").at(0) + "png");
+    out << buffer.data();
+
+    m_socket->write(message);
+    m_socket->flush();
+
+    QElapsedTimer t;
+    t.start();
+    while (t.elapsed() < 500) {
+        QCoreApplication::processEvents();
+    }
+    QStringList list;
+    list.append("ETCp_sendLeavePic");
+    list.append(leaveHighwayPicName);
+    sendMessage(list);
+}

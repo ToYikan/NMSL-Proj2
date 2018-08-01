@@ -706,7 +706,7 @@ QTabBar::tab:selected {
 </string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <property name="iconSize">
       <size>
@@ -751,17 +751,38 @@ QTabBar::tab:selected {
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Logistics</string>
+       <string>ETCsystem</string>
       </attribute>
+      <widget class="QLabel" name="label_">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>80</y>
+         <width>72</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>300</y>
+         <width>72</width>
+         <height>15</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
        <string>Warehouse</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="tab_sell">
-      <attribute name="title">
-       <string>Sell</string>
       </attribute>
      </widget>
      <widget class="QWidget" name="tab_4">
@@ -772,6 +793,11 @@ QTabBar::tab:selected {
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
        <string>System</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_sell">
+      <attribute name="title">
+       <string>Sell</string>
       </attribute>
      </widget>
     </widget>
