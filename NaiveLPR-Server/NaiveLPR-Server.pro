@@ -17,6 +17,9 @@ TEMPLATE = app
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+INCLUDEPATH +=/usr/local/include
+LIBS +=-L/usr/local/lib -lopencv_imgproc -lopencv_core -lopencv_highgui -lopencv_imgcodecs -lopencv_ml
+
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -31,7 +34,11 @@ SOURCES += main.cpp \
     socketthread.cpp \
     sqltool.cpp \
     TCPConnection.cpp \
-    tool.cpp
+    tool.cpp \
+    CharRecognition.cpp \
+    CharSegment.cpp \
+    PlateDetection.cpp \
+    PlateRecognition.cpp
 
 HEADERS  += \
     forgetpassword.h \
@@ -41,7 +48,11 @@ HEADERS  += \
     socketthread.h \
     sqltool.h \
     TCPConnection.h \
-    tool.h
+    tool.h \
+    CharRecognition.h \
+    CharSegment.h \
+    PlateDetection.h \
+    PlateRecognition.h
 
 
 win32{

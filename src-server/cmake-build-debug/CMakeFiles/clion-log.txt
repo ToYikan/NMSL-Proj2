@@ -1,4 +1,1 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug
+CMakeLists.txt not found in /Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server Select CMakeLists.txt file...

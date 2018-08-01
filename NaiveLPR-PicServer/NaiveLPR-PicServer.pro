@@ -1,14 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-07-30T14:48:37
+# Project created by QtCreator 2018-07-31T13:20:42
 #
 #-------------------------------------------------
 
-QT       += core gui network sql
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = NaiveLPR-SubClient
+TARGET = NaiveLPR-PicServer
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -23,12 +23,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp\
-        subclient.cpp
+SOURCES += \
+    main.cpp \
+    picserver.cpp \
+    processor.cpp \
+    server.cpp \
+    socketthread.cpp
 
-HEADERS  += subclient.h
-
-FORMS    += subclient.ui
-
-RESOURCES += \
-    ../Resources/resources.qrc
+HEADERS  += \
+    picserver.h \
+    processor.h \
+    server.h \
+    socketthread.h

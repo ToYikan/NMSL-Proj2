@@ -4,7 +4,7 @@ vector<string> CharRecognition::process(Mat charMat){
 
     Ptr<ANN_MLP> ann = ANN_MLP::create();
 
-    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/ANN-Model.xml");
+    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/NaiveLPR-Server/ANN-Model.xml");
 
     string chars[CLASS_NUM1] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
                                 "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
@@ -91,7 +91,7 @@ vector<string> CharRecognition::process_sp(Mat charMat){
 
     Ptr<ANN_MLP> ann = ANN_MLP::create();
 
-    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/ANN-Model-SP.xml");
+    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/NaiveLPR-Server/ANN-Model-SP.xml");
 
     string chars[CLASS_NUM3] = {"A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
                                 "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V",
@@ -170,7 +170,7 @@ vector<string> CharRecognition::process_ch(Mat charMat){
 
     Ptr<ANN_MLP> ann = ANN_MLP::create();
 
-    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/ANN-Model-CH.xml");
+    ann = Algorithm::load<ANN_MLP>("/Users/Haibara/Documents/GitHub/NMSL-Proj2/NaiveLPR-Server/ANN-Model-CH.xml");
 
     string chars[CLASS_NUM2] = {"云", "京", "冀", "吉", "宁", "川", "新", "晋", "桂", "沪",
                                 "津", "浙", "渝", "湘", "琼", "甘", "皖", "粤", "苏", "蒙",

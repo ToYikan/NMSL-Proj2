@@ -1,11 +1,10 @@
-#include "subclient.h"
+#include "picserver.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    SubClient *w = new SubClient;
-    w->show();
+    PicServer w;
 
     return a.exec();
 }

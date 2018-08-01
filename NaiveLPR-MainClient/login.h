@@ -17,7 +17,7 @@
 #include <QTime>
 #include <QDate>
 
-#define LOGIN_DIR "/Users/Haibara/Documents/qt build files/Clientfiles/pwd.data"
+#define LOGIN_DIR "/Users/Haibara/Documents/qt build files2/Clientfiles/pwd.data"
 
 namespace Ui {
 class Login;

@@ -1,3 +1,0 @@
-/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Haibara/Documents/GitHub/NMSL-Proj2/src-server/cmake-build-debug/CMakeFiles/src_server.dir
