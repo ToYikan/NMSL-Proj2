@@ -116,13 +116,13 @@ void SubClient::readMessage()
             ui->label_12->setText(list.at(3));
             ui->label_14->setText(list.at(4));
 
-            ui->frame->setStyleSheet("QFrame{background: rgba(255, 255, 255, 40);"
-                                     "border-image:url(:/bg5.png);}");
+            ui->frame->setStyleSheet("QFrame{background: rgba(255, 255, 255, 100);"
+                                     "border: 2px solid rgb(160, 160, 160);}");
 
             ui->frame_2->setStyleSheet("QFrame{"
-                                       "background: rgba(248, 248, 248, 200);"
+                                       "background: rgba(248, 248, 248, 220);"
                                        "border-image:none;"
-                                       "border: 2px solid rgb(200, 200, 200);}");
+                                       "border: 2px solid rgb(220, 220, 220);}");
 
 
             QPixmap *pixmap = new QPixmap(DIR + QString("/users/") + list.at(5));
@@ -178,11 +178,10 @@ void SubClient::readMessage()
             ui->label_12->setText(list.at(3));
             ui->label_14->setText(list.at(4));
 
-            ui->frame->setStyleSheet("QFrame{background: rgba(255, 255, 255, 40);"
-                                     "border-image:url(:/bg5.png);}");
+            ui->frame->setStyleSheet("QFrame{background: rgba(0, 0, 0, 100);}");
 
             ui->frame_2->setStyleSheet("QFrame{"
-                                       "background: rgba(248, 248, 248, 200);"
+                                       "background: rgba(248, 248, 248, 220);"
                                        "border-image:none;"
                                        "border: 2px solid rgb(200, 200, 200);}");
 
