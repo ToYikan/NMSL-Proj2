@@ -36,6 +36,7 @@ SubClient::SubClient(QWidget *parent) :
         ui->lineEdit_3->setTextMargins(13,0,10,0);
         ui->label_pass->setText(tmp_password);
         ui->checkBox_2->setChecked(true);
+        ui->lineEdit_3->setFocus();
     }
     file.close();
 
@@ -75,7 +76,29 @@ SubClient::SubClient(QWidget *parent) :
     ui->label_20->setText(QChar(0xf577));
     ui->label_20->setStyleSheet("border: 0px; color: rgb(106, 106, 106);background:none;");
 
+    ui->label_21->setFont(font);
+    ui->label_21->setText(QChar(0xf03e));
+    ui->label_21->setStyleSheet("border: 0px; color: rgb(106, 106, 106);background:none;");
+
+    ui->label_23->setFont(font);
+    ui->label_23->setText(QChar(0xf02f));
+    ui->label_23->setStyleSheet("border: 0px; color: rgb(106, 106, 106);background:none;");
+
+    ui->label_25->setFont(font);
+    ui->label_25->setText(QChar(0xf200));
+    ui->label_25->setStyleSheet("border: 0px; color: rgb(106, 106, 106);background:none;");
+
     ui->stackedWidget->setCurrentIndex(1);
+
+    connect(ui->lineEdit_3, SIGNAL(returnPressed()), ui->pushButton_switch_2, SIGNAL(clicked()), Qt::UniqueConnection);
+
+    ui->stackedWidget_2->setVisible(false);
+    ui->label_showNewPortraitPath->setVisible(false);
+
+    ui->label_showNewPortrait->installEventFilter(this);
+    ui->label_showNewPortrait->setAcceptDrops(true);
+
+    ui->progressBar_2->setVisible(false);
 }
 
 SubClient::~SubClient()
@@ -208,157 +231,6 @@ void SubClient::on_pushButton_switch_2_clicked()
     sendMessage(list);
 }
 
-void SubClient::sendMessage(QStringList list)
-{
-
-    QByteArray message;
-    QDataStream out(&message,QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_5_7);
-    out << (quint16) 0;
-    out << list;
-    out.device()->seek(0);
-    out << (quint16) (message.size() - sizeof(quint16));
-    m_tcpsocket->write(message);
-    m_tcpsocket->flush();
-}
-
-void SubClient::readMessage()
-{
-    QDataStream in(m_tcpsocket);
-    in.setVersion(QDataStream::Qt_5_7);
-    quint16 blocksize = 0;
-    if (m_tcpsocket->bytesAvailable() < (int)sizeof(quint16)){
-        return;
-
-    }
-    in >> blocksize;
-
-    if(m_tcpsocket->bytesAvailable() < blocksize){
-        return;
-    }
-    QString from;
-    in >> from;
-    qDebug() << from << endl;
-
-    if(from == "login"){
-
-        int status;
-        in >> status;
-
-
-        QString username = ui->lineEdit_4->text().trimmed();
-        QString password = (ui->lineEdit_3->text() == "******") ?
-                    ui->label_pass->text() : ui->lineEdit_3->text();
-        bool isChecked = ui->checkBox_2->isChecked();
-
-        if(status == 0){
-            status = checkpass(username, password, isChecked);
-        }
-
-        switch(status){
-            case -1:
-                QMessageBox::warning(this,"警告", "\n保存密码失败！",QMessageBox::Close);
-                break;
-            case -2:
-                QMessageBox::warning(this,"警告", "\n请输入用户名！",QMessageBox::Close);
-                break;
-            case -3:
-                QMessageBox::warning(this,"警告", "\n请输入密码！",QMessageBox::Close);
-                break;
-            case -4:
-                QMessageBox::warning(this,"警告", "\n请稍后再试。", QMessageBox::Close);
-                break;
-            case -5:
-                QMessageBox::warning(this,"警告", "\n密码错误！\n剩余次数：0 次。\n请5分钟后再试。",QMessageBox::Close);
-                break;
-            case -6:
-                QMessageBox::warning(this,"警告", "\n密码错误！\n剩余次数：1 次。",QMessageBox::Close);
-                break;
-            case -7:
-                QMessageBox::warning(this,"警告", "\n密码错误！\n剩余次数：2 次。",QMessageBox::Close);
-                break;
-            case -8:
-                QMessageBox::warning(this,"警告", "\n找不到该用户！",QMessageBox::Close);
-                break;
-            case 0:
-                sendSignalForLogin(username);
-                break;
-        }
-    }
-    if(from == "info"){
-
-        QStringList list;
-        in >> list;
-
-        qDebug() << list.at(2);
-
-        if(list.at(2) == "用户"){
-
-            QApplication::processEvents();
-            QApplication::processEvents();
-            for(int i = 550; i >= 280; i-=5){
-                QApplication::processEvents();
-                move(i,130);
-                QApplication::processEvents();
-            }
-
-            for(int i = 280; i >= 260; i-=2){
-                QApplication::processEvents();
-                move(i,130);
-                QApplication::processEvents();
-            }
-
-            for(int i = 260; i >= 250; i-=1){
-                QApplication::processEvents();
-                move(i,130);
-                QApplication::processEvents();
-            }
-
-            ui->stackedWidget->setCurrentIndex(0);
-
-
-            ui->label_2->setText(list.at(0));
-            ui->label_4->setText(list.at(1));
-            ui->label_8->setText(list.at(2));
-            ui->label_12->setText(list.at(3));
-            ui->label_14->setText(list.at(4));
-
-            ui->frame->setStyleSheet("QFrame{background: rgba(255, 255, 255, 40);"
-                                     "border-image:url(:/bg5.png);}");
-
-            ui->frame_2->setStyleSheet("QFrame{"
-                                       "background: rgba(248, 248, 248, 200);"
-                                       "border-image:none;"
-                                       "border: 2px solid rgb(200, 200, 200);}");
-
-
-            QPixmap *pixmap = new QPixmap(DIR + QString("/users/") + list.at(5));
-            if (pixmap->isNull()){
-                download("/users/" + list.at(5), DIR + QString("/users/") + list.at(5));
-            }
-
-            if(pixmap->isNull()){
-                pixmap = new QPixmap(":/user.png");
-            }
-
-            QApplication::processEvents();
-
-            getRoundPixmap(pixmap, QSize(140, 140));
-            ui->label_5->setScaledContents(true);
-            ui->label_5->setPixmap(*pixmap);
-            delete pixmap;
-
-
-            QApplication::processEvents();
-        }else{
-            QMessageBox::warning(this,"警告", "\n非用户账号",QMessageBox::Close);
-            return;
-        }
-
-    }
-
-//    m_tcpsocket->disconnectFromHost();
-}
 
 /**
  * check pwd.data and auto save password to file
@@ -414,6 +286,7 @@ void SubClient::on_pushButton_switch_clicked()
 {
 
     ui->frame->setStyleSheet("QFrame{background: rgba(255, 255, 255, 0);}");
+    ui->stackedWidget_2->setVisible(false);
 
     QApplication::processEvents();
     QApplication::processEvents();
@@ -463,3 +336,140 @@ void SubClient::on_pushButton_quit_clicked()
 {
     this->close();
 }
+
+void SubClient::on_pushButton_addNewPortrait_clicked()
+{
+    QStringList picture = QFileDialog::getOpenFileNames(this, tr("open file"), "/Users/Haibara/Desktop",
+                                                        tr("图片文件(*png *jpg)"));
+    if(picture.isEmpty()){
+        return ;
+    }
+
+    QImage tempPortrait(picture.at(0));
+    QPixmap portrait = QPixmap::fromImage(tempPortrait.scaled(432, 392, Qt::KeepAspectRatio,
+                                                              Qt::SmoothTransformation));
+    ui->label_showNewPortraitPath->setText(picture.at(0));
+    ui->label_showNewPortrait->setPixmap(portrait);
+    ui->label_showNewPortrait->show();
+}
+
+void SubClient::on_pushButton_confirmNewStaff_clicked()
+{
+
+    QDateTime current_date_time = QDateTime::currentDateTime();
+    QString time = current_date_time.toString("yyyy-MM-dd hh-mm-ss");
+
+    QString picName = time + ".png";
+
+    QString picPath = ui->label_showNewPortraitPath->text();
+
+    QBuffer buffer;
+    QByteArray message;
+    QDataStream out(&message,QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_7);
+    buffer.open(QIODevice::ReadWrite);
+    QImage img;
+    img.load(picPath);
+    img.save(&buffer,"png");
+    out << qint32(buffer.size());
+    out << QString("/plates/" + picName.split(".").at(0) + ".png");
+    out << buffer.data();
+
+    m_socket->write(message);
+    m_socket->flush();
+
+    QElapsedTimer t;
+    t.start();
+    while(t.elapsed()<500)
+        QCoreApplication::processEvents();
+
+    QStringList list;
+
+    list.append("LPR");
+    list.append(picName);
+    sendMessage(list);
+
+
+}
+
+
+bool SubClient::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == ui->label_showNewPortrait) {
+        if (event->type() == QEvent::DragEnter) {
+
+            QDragEnterEvent *dee = dynamic_cast<QDragEnterEvent *>(event);
+            dee->acceptProposedAction();
+            return true;
+        } else if (event->type() == QEvent::Drop) {
+
+            QDropEvent *de = dynamic_cast<QDropEvent *>(event);
+            QList<QUrl> urls = de->mimeData()->urls();
+
+            if (urls.isEmpty()) { return true; }
+            QString path = urls.first().toLocalFile();
+
+            QImage image(path);
+            if (!image.isNull()) {
+                image = image.scaled(432, 392,
+                                     Qt::KeepAspectRatio,
+                                     Qt::SmoothTransformation);
+                ui->label_showNewPortrait->setPixmap(QPixmap::fromImage(image));
+                ui->label_showNewPortraitPath->setText(path);
+            }
+
+            return true;
+        }
+    }
+
+    return QWidget::eventFilter(watched, event);
+}
+
+void SubClient::on_pushButton_confirmNewStaff_2_clicked()
+{
+    ui->label_showNewPortrait->setText("Preview");
+    ui->label_showNewPortraitPath->clear();
+    ui->label_showNumber->clear();
+    ui->label_showPlate->clear();
+    ui->label_showProbability->clear();
+}
+
+/**
+ * progress bar
+ *
+ * @author hzc
+ */
+void SubClient::progressBar()
+{
+    ui->progressBar_2->setVisible(true);
+    ui->progressBar_2->setRange(0, 100);
+    for (int i = 0; i <= 100; i++){
+        for(int j = 0; j < 1000000; j++){
+            i = i + 1;
+            i = i - 1;
+        }
+        ui->progressBar_2->setValue(i);
+        QApplication::processEvents();
+    }
+    ui->progressBar_2->setVisible(false);
+}
+
+/**
+ * fast version progress bar
+ *
+ * @author hzc
+ */
+void SubClient::progressBar_fast()
+{
+    ui->progressBar_2->setVisible(true);
+    ui->progressBar_2->setRange(0, 100);
+    for (int i = 0; i <= 100; i++){
+        for(int j = 0; j < 300000; j++){
+            i = i + 1;
+            i = i - 1;
+        }
+        ui->progressBar_2->setValue(i);
+        QApplication::processEvents();
+    }
+    ui->progressBar_2->setVisible(false);
+}
+

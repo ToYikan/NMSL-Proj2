@@ -65,6 +65,7 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
      *
      */
 
+
     int fontId = QFontDatabase::addApplicationFont(":/font/fa-solid-900.ttf");
     QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
 

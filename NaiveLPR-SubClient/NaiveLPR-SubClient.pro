@@ -24,7 +24,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        subclient.cpp
+        subclient.cpp \
+    subclient_msg.cpp
 
 HEADERS  += subclient.h
 

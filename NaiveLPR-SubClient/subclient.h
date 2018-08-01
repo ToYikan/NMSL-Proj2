@@ -40,6 +40,7 @@
 #include <QDateTime>
 #include <QTime>
 #include <QDate>
+#include <QFileDialog>
 
 #define DIR "/Users/Haibara/Documents/qt build files2/Clientfiles"
 
@@ -73,6 +74,14 @@ private slots:
     void on_pushButton_switch_clicked();
 
     void on_pushButton_quit_clicked();
+
+    void on_pushButton_addNewPortrait_clicked();
+
+    void on_pushButton_confirmNewStaff_clicked();
+
+    bool eventFilter(QObject *watched, QEvent *event);
+
+    void on_pushButton_confirmNewStaff_2_clicked();
 
 private:
     Ui::SubClient *ui;

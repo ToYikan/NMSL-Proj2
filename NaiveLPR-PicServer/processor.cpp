@@ -97,8 +97,6 @@ void Processor::work ()
 
         qDebug() << "Uploaded: " + fileName;
 
-
-
     }
     dataSize = 0;
     fileName.clear();

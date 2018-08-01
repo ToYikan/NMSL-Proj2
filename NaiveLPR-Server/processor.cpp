@@ -1,6 +1,8 @@
 #include "processor.h"
 #include <QDateTime>
 
+#define DIR "/Users/Haibara/Documents/qt build files2/Serverfiles"
+
 Processor::Processor(QTcpSocket* socket)
 {
     this->m_socket = socket;
@@ -83,6 +85,55 @@ void Processor::work ()
     if(function == "transfer"){
 
     }
+
+    if(function == "LPR"){
+
+        QString filename = list.at(0);
+
+        QString plateName = filename.split(".").at(0) + "-plate.jpg";
+
+        Mat srcImage = imread((DIR + QString("/plates/") + filename).toStdString(), 1);
+
+        Mat midImage;
+
+        midImage = PlateDetection::process(srcImage);
+
+        if(midImage.rows < 2 || midImage.cols < 2){
+            out << function;
+            out << QString("FAIL");
+        }else{
+            imwrite((DIR + QString("/plates-r/") + plateName).toStdString(), midImage);
+
+            Mat result = PlateRecognition::process(midImage);
+            vector<Mat> chars = CharSegment::process(midImage, result);
+            string plate = "";
+            double rate = 0;
+
+            for(int j = 0; j < 7; ++j){
+                if(j == 0){
+                    vector<string> r = CharRecognition::process_ch(chars.at(j));
+                    plate += r.at(0);
+                    rate += stod(r.at(1)) / 7;
+                }else if(j == 1){
+                    vector<string> r = CharRecognition::process_sp(chars.at(j));
+                    plate += r.at(0);
+                    rate += stod(r.at(1)) / 7;
+                }else{
+                    vector<string> r = CharRecognition::process(chars.at(j));
+                    plate += r.at(0);
+                    rate += stod(r.at(1)) / 7;
+                }
+            }
+            out << function;
+            out << plateName;
+            out << QString::fromStdString(plate);
+            out << rate;
+        }
+    }
+
+
+
+
 
     out.device()->seek(0);
     out << (quint16) (message.size() - sizeof(quint16));
