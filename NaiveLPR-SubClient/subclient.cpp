@@ -303,25 +303,23 @@ void SubClient::on_pushButton_switch_clicked()
 
     QApplication::processEvents();
     QApplication::processEvents();
-//    for(int i = 250; i <= 260; i+=1){
-//        QApplication::processEvents();
-//        move(i,130);
-//        QApplication::processEvents();
-//    }
+    for(int i = 250; i <= 260; i+=1){
+        QApplication::processEvents();
+        move(i,130);
+        QApplication::processEvents();
+    }
 
-//    for(int i = 260; i <= 280; i+=2){
-//        QApplication::processEvents();
-//        move(i,130);
-//        QApplication::processEvents();
-//    }
+    for(int i = 260; i <= 280; i+=2){
+        QApplication::processEvents();
+        move(i,130);
+        QApplication::processEvents();
+    }
 
-//    for(int i = 280; i <= 550; i+=5){
-//        QApplication::processEvents();
-//        move(i,130);
-//        QApplication::processEvents();
-//    }
-
-     move(550,130);
+    for(int i = 280; i <= 550; i+=5){
+        QApplication::processEvents();
+        move(i,130);
+        QApplication::processEvents();
+    }
 
     QPixmap *pixmap = new QPixmap(":/user.png");
 
@@ -371,10 +369,6 @@ void SubClient::on_pushButton_addNewPortrait_clicked()
 void SubClient::on_pushButton_confirmNewStaff_clicked()
 {
 
-    if(ui->label_showNewPortraitPath->text().trimmed() == ""){
-        QMessageBox::warning(this,"警告", "\n请添加图片",QMessageBox::Close);
-        return ;
-    }
     QDateTime current_date_time = QDateTime::currentDateTime();
     QString time = current_date_time.toString("yyyy-MM-dd hh-mm-ss");
 

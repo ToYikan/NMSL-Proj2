@@ -65,6 +65,8 @@ public:
 
 private slots:
 
+    void on_tabWidget_tabBarClicked(int index);
+
     void on_pushButton_B_clicked();
 
     void on_pushButton_C_clicked();
@@ -86,8 +88,6 @@ private slots:
     void on_pushButton_switch_clicked();
 
     void on_pushButton_quit_clicked();
-
-    void on_welcome_button_clicked();
 
 signals:
     void stringReturn(QString);

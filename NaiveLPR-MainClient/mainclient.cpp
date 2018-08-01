@@ -23,7 +23,6 @@ MainClient::MainClient(QWidget *parent) :
     this->setStyleSheet("QFrame{border-radius:10px;}");
 
     move(135,70);
-    on_welcome_button_clicked();
 
 }
 
@@ -56,6 +55,9 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
 {
     this->show();
     ui->pushButton_switch->setEnabled(false);
+
+    ui->tabWidget->setCurrentIndex(0);
+    on_tabWidget_tabBarClicked(0);
 
 
     /*
@@ -119,12 +121,6 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
     ui->label_13->setFont(font);
     ui->label_13->setText(QChar(0xf2b6));
     ui->label_13->setStyleSheet("border: 0px; color: rgb(106, 106, 106);background:none;");
-
-    ui->welcome_button->setFont(font);
-    ui->welcome_button->setText(QChar(0xf111));
-    ui->welcome_button->setStyleSheet("QPushButton{border: 0px; color: rgb(200, 200, 200);background:none;}"
-                                      "QPushButton:hover{border: 0px; color: rgba(15, 128, 255, 190);}"
-                                      "QPushButton:checked{border: 0px; color: rgba(15, 128, 255, 190);}");
 
     style = false;
     QFile *file = new QFile(CONFIG_DIR);
@@ -203,13 +199,129 @@ void MainClient::getRoundPixmap(QPixmap* src,QSize size)
 }
 
 /**
+ * slot method
+ *
+ * @author hzc
+ * @param index tab index of tab widget
+ */
+void MainClient::on_tabWidget_tabBarClicked(int index){
+    on_pushButton_A_clicked();
+    if(index == 0){
+        ui->pushButton_A->setVisible(true);
+        ui->pushButton_B->setVisible(true);
+        ui->pushButton_C->setVisible(true);
+        ui->pushButton_D->setVisible(true);
+
+        ui->pushButton_A->setText("");
+        ui->pushButton_B->setText("");
+        ui->pushButton_C->setText("");
+        ui->pushButton_D->setText("");
+
+    }
+    if(index == 1){
+         ui->pushButton_A->setVisible(true);
+        ui->pushButton_B->setVisible(true);
+        ui->pushButton_C->setVisible(true);
+        ui->pushButton_D->setVisible(true);
+
+        ui->pushButton_A->setText("Generate");
+        ui->pushButton_B->setText("Delivery");
+        ui->pushButton_C->setText("");
+        ui->pushButton_D->setText("");
+
+    }
+    if(index == 2){
+        ui->pushButton_A->setVisible(true);
+        ui->pushButton_B->setVisible(true);
+        ui->pushButton_C->setVisible(true);
+        ui->pushButton_D->setVisible(true);
+
+        ui->pushButton_A->setText("Replenish");
+        ui->pushButton_B->setText("History");
+        ui->pushButton_C->setText("Route");
+        ui->pushButton_D->setText("Auto");
+
+    }
+    if(index == 3){
+        ui->pushButton_A->setVisible(true);
+        ui->pushButton_B->setVisible(true);
+        ui->pushButton_C->setVisible(true);
+        ui->pushButton_D->setVisible(true);
+
+        ui->pushButton_A->setText("Info");
+        ui->pushButton_B->setText("Cargo");
+        ui->pushButton_C->setText("Inventory");
+        ui->pushButton_D->setText("Demand");
+    }
+    if(index == 4){
+        ui->pushButton_A->setVisible(true);
+        ui->pushButton_B->setVisible(true);
+        ui->pushButton_C->setVisible(true);
+        ui->pushButton_D->setVisible(true);
+
+        ui->pushButton_A->setText("Record");
+        ui->pushButton_B->setText("Delivery");
+        ui->pushButton_C->setText("Arrive");
+        ui->pushButton_D->setText("Manage");
+
+    }
+    if(index == 5){
+        ui->pushButton_A->setVisible(true);
+        ui->pushButton_B->setVisible(true);
+        ui->pushButton_C->setVisible(true);
+        ui->pushButton_D->setVisible(true);
+
+        if(ui->label_8->text() == "管理员" ||
+                ui->label_8->text() == "测试用"){
+            ui->pushButton_A->setText("Display");
+            ui->pushButton_B->setText("Add");
+            ui->pushButton_C->setText("Modify");
+            ui->pushButton_D->setText("Security");
+        }else{
+             ui->pushButton_A->setText("Security");
+             ui->pushButton_B->setText("");
+             ui->pushButton_C->setText("");
+             ui->pushButton_D->setText("");
+        }
+
+
+
+    }
+    if(index == 6){
+         ui->pushButton_A->setVisible(true);
+        ui->pushButton_B->setVisible(true);
+        ui->pushButton_C->setVisible(true);
+        ui->pushButton_D->setVisible(true);
+
+        ui->pushButton_A->setText("Garment");
+        ui->pushButton_B->setText("Manage");
+        ui->pushButton_C->setText("Addition");
+        ui->pushButton_D->setText("");
+
+    }
+}
+
+/**
  * on_pushButton_A_clicked slot
  *
  * @author hzc
  */
 void MainClient::on_pushButton_A_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->pushButton_A->setChecked(true);
+
+    //A
+
+
+
+    //B
+
+
+    //C
+
+
+    //D
+
 
 }
 
@@ -220,7 +332,16 @@ void MainClient::on_pushButton_A_clicked()
  */
 void MainClient::on_pushButton_B_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    //A
+
+
+    //B
+
+
+    //C
+
+
+    //D
 
 }
 
@@ -231,8 +352,19 @@ void MainClient::on_pushButton_B_clicked()
  */
 void MainClient::on_pushButton_C_clicked()
 {
+    //A
 
-    ui->stackedWidget->setCurrentIndex(3);
+
+    //B
+
+
+    //C
+
+
+    //D
+
+
+
 }
 
 /**
@@ -242,18 +374,17 @@ void MainClient::on_pushButton_C_clicked()
  */
 void MainClient::on_pushButton_D_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
-}
+    //A
 
-/**
- * on_welcome_button_clicked slot
- *
- * @author hzc
- */
-void MainClient::on_welcome_button_clicked()
-{
-    ui->welcome_button->setChecked(true);
-    ui->stackedWidget->setCurrentIndex(0);
+
+    //B
+
+
+    //C
+
+
+    //D
+
 }
 
 
@@ -408,4 +539,3 @@ void MainClient::on_style_change_clicked()
     }
     file->close();
 }
-
