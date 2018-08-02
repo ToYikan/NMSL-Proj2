@@ -380,9 +380,8 @@ void CharRecognition::ANN_Train_SP(string dir, int hiddenLayerNum, int iterNum,
 void CharRecognition::ANN_Train(string dir, int hiddenLayerNum, int iterNum,
                                 double thresholdValue)
 {
-    const string perFileReadPath = dir;
 
-    const int totalNum = 1100;
+    const string perFileReadPath = dir;
 
     const int maxNum = 130;
 
@@ -393,16 +392,16 @@ void CharRecognition::ANN_Train(string dir, int hiddenLayerNum, int iterNum,
 
 //    vector<float> feat;
 
-    float trainingData[totalNum][DIM];
+    float trainingData[TOTALNUM1][DIM];
 
-    float labels[totalNum][CLASS_NUM1];//训练样本标签
+    float labels[TOTALNUM1][CLASS_NUM1];//训练样本标签
 
 
     int count = 0;
 
     for (int i = 0; i < CLASS_NUM1; i++)//不同类
     {
-        if(count > totalNum){
+        if(count > TOTALNUM1){
             break;
         }
         int sampleNumPerClass = 0;//训练字符每类数量
@@ -482,11 +481,11 @@ void CharRecognition::ANN_Train(string dir, int hiddenLayerNum, int iterNum,
 //    }
 
     // Set up training data Mat
-    Mat trainingDataMat(totalNum, DIM, CV_32F, trainingData);
+    Mat trainingDataMat(TOTALNUM1, DIM, CV_32F, trainingData);
     cout << "trainingDataMat——OK！" << endl;
 
 
-    Mat labelsMat(totalNum, CLASS_NUM1, CV_32F, labels);
+    Mat labelsMat(TOTALNUM1, CLASS_NUM1, CV_32F, labels);
     cout << "labelsMat——OK！" << endl;
 
     //训练代码

@@ -5,6 +5,8 @@
 
 #define CONFIG_DIR "/Users/Haibara/Documents/qt build files2/Clientfiles/config.data"
 
+#define MODEL_DIR "/Users/Haibara/Documents/qt build files2/Clientfiles/model.data"
+
 #include <QMainWindow>
 
 #include <QFont>
@@ -31,6 +33,7 @@
 #include <QStringListModel>
 #include <QtNetwork>
 #include "login.h"
+#include "CharRecognition.h"
 #include <QDesktopWidget>
 #include <QDragEnterEvent>
 #include <QDebug>
@@ -47,6 +50,7 @@
 #include <QTime>
 #include <QDate>
 #include <QListView>
+#include <QFileDialog>
 
 #include "opencv2/opencv.hpp"
 #include "opencv2/core/core.hpp"
@@ -119,6 +123,12 @@ private slots:
 
     void on_pushButton_E_clicked();
 
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_generate_clicked();
+
 signals:
     void stringReturn(QString);
 
@@ -137,10 +147,14 @@ private:
     void progressBar_fast();
     void progressBar();
 
+    //for page_lpr1
     QVector<QStringList> lpr_history;
 
     int processPhase;
     QString fileNameForProcess;
+
+    //for page_lpr2
+    QString dirForImage;
 
 };
 

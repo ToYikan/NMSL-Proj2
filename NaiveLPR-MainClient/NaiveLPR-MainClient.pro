@@ -32,11 +32,13 @@ SOURCES += main.cpp\
     login.cpp \
     mainclient_msg.cpp \
     page_lpr1.cpp \
-    page_lpr2.cpp
+    page_lpr2.cpp \
+    CharRecognition.cpp
 
 HEADERS  += mainclient.h \
     forgetpassword.h \
-    login.h
+    login.h \
+    CharRecognition.h
 
 FORMS    += mainclient.ui \
     forgetpassword.ui \

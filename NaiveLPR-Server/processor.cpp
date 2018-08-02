@@ -1,8 +1,6 @@
 #include "processor.h"
 #include <QDateTime>
 
-#define DIR "/Users/Haibara/Documents/qt build files2/Serverfiles"
-
 Processor::Processor(QTcpSocket* socket)
 {
     this->m_socket = socket;
@@ -92,6 +90,50 @@ void Processor::work ()
 
     if(function == "LPR"){
 
+        //init model
+
+        string dir;
+
+        QString model = "";
+
+        QFile *file = new QFile(MODEL_DIR);
+        if(file->exists()){
+            if (file->open(QFile::ReadWrite | QFile::Text)){
+               model = file->readLine().trimmed();
+            }else{
+                qDebug()<<"打开失败";
+            }
+        }
+        file->close();
+
+
+        if(model == "" || model == "DEFAULT"){
+            dir = DIR_ANN_DEFAULT;
+        }else{
+            QString tmp;
+            QFile *file = new QFile(CONFIG_DIR);
+            if(file->exists()){
+                if (file->open(QFile::ReadWrite | QFile::Text)){
+                   tmp = file->readLine().trimmed();
+                }else{
+                    qDebug()<<"打开失败";
+                }
+            }
+            file->close();
+            if(tmp.trimmed() != ""){
+                QFile *file = new QFile(tmp + "/ANN-Model-CH.xml");
+                if(file->exists()){
+                    dir = tmp.toStdString();
+                }else{
+                    dir = DIR_ANN_DEFAULT;
+                }
+
+            }else{
+                dir = DIR_ANN_DEFAULT;
+            }
+        }
+
+
         QString filename = list.at(0);
 
         QString plateName = filename.split(".").at(0) + "-plate.jpg";
@@ -125,15 +167,15 @@ void Processor::work ()
             for(int j = 0; j < 7; ++j){
                 imwrite((DIR + QString("/chars/") + charName.at(j)).toStdString(), chars.at(j));
                 if(j == 0){
-                    vector<string> r = CharRecognition::process_ch(chars.at(j));
+                    vector<string> r = CharRecognition::process_ch(chars.at(j), dir);
                     plate += r.at(0);
                     rate += stod(r.at(1)) / 7;
                 }else if(j == 1){
-                    vector<string> r = CharRecognition::process_sp(chars.at(j));
+                    vector<string> r = CharRecognition::process_sp(chars.at(j), dir);
                     plate += r.at(0);
                     rate += stod(r.at(1)) / 7;
                 }else{
-                    vector<string> r = CharRecognition::process(chars.at(j));
+                    vector<string> r = CharRecognition::process(chars.at(j), dir);
                     plate += r.at(0);
                     rate += stod(r.at(1)) / 7;
                 }
@@ -208,6 +250,37 @@ void Processor::work ()
         }else{
             out << QString("Edited");
         }
+    }
+
+    if(function == "setModel"){
+        QString model_type = list.at(0);
+        QFile *file = new QFile(MODEL_DIR);
+        if (file->open(QFile::ReadWrite | QFile::Text)){
+            QTextStream out(file);
+            out << model_type << "\n";
+        }else{
+            qDebug()<<"打开失败";
+        }
+        file->close();
+
+        out << function;
+        out << QString("Done");
+    }
+
+    if(function == "trainModel"){
+        QString dir = list.at(0);
+
+        QFile *file = new QFile(CONFIG_DIR);
+        if (file->open(QFile::ReadWrite | QFile::Text)){
+            QTextStream out(file);
+            out << dir << "\n";
+        }else{
+            qDebug()<<"打开失败";
+        }
+        file->close();
+
+        out << function;
+        out << QString("Done");
     }
 
 

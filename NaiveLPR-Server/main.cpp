@@ -13,6 +13,10 @@ int main(int argc, char *argv[])
     SQLTool::connection();
     TCPConnection w;
 
+//    CharRecognition::ANN_Train("/Users/Haibara/Desktop/LPCharSamples", 65, 5000, 0.0001);
+//    CharRecognition::ANN_Train_SP("/Users/Haibara/Desktop/LPCharSamples", 65, 5000, 0.0001);
+//    CharRecognition::ANN_Train_CH("/Users/Haibara/Desktop/LPCharSamples", 65, 5000, 0.0001);
+
 //    int failCount = 0;
 //    for(int i = 1; i <= PICNUM; i++) {
 //        string filename = "/Users/Haibara/Desktop/carPicture/P" + to_string(i) + ".jpg";//打开的文件

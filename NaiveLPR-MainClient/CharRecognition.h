@@ -47,14 +47,12 @@ public:
     static void ANN_Train_SP(string dir, int hiddenLayerNum = DIM, int iterNum = 5000,
                              double thresholdValue = 1e-4);
 
+private:
     static float calcMatValue(const Mat &image);
     static void calcGradientFeat(const Mat& imgSrc, vector<float>& feat);
     static void calcGrayFeat(const Mat& imgSrc, vector<float>& feat);
     static Mat features(Mat in, int sizeData);
     static Mat ProjectHistogram(Mat img, int t);
-
-private:
-
 
 };
 

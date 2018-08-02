@@ -134,6 +134,10 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
     ui->label_20->setText(QChar(0xf138));
     ui->label_20->setStyleSheet("border: 0px; color: rgb(106, 106, 106);background:none;");
 
+    ui->label_28->setFont(font);
+    ui->label_28->setText(QChar(0xf1b8));
+    ui->label_28->setStyleSheet("border: 0px; color: rgb(106, 106, 106);background:none;");
+
     style = false;
     QFile *file = new QFile(CONFIG_DIR);
     if(file->exists()){
@@ -183,6 +187,7 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
     ui->comboBox_p4->setView(new QListView());
     ui->comboBox_p5->setView(new QListView());
     ui->comboBox_p6->setView(new QListView());
+    ui->comboBox_model->setView(new QListView());
 
 
     ui->pushButton_switch->setEnabled(true);
@@ -193,6 +198,22 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
     ui->tableWidget_history->horizontalHeader()->setStretchLastSection(true);
     ui->tableWidget_history->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget_history->setAlternatingRowColors(true);
+
+
+    file = new QFile(MODEL_DIR);
+    if(file->exists()){
+        if (file->open(QFile::ReadWrite | QFile::Text)){
+            QString m = file->readLine().trimmed();
+            if(m == "DEFAULT" || m == ""){
+                ui->comboBox_model->setCurrentIndex(0);
+            }else{
+                ui->comboBox_model->setCurrentIndex(1);
+            }
+        }else{
+            qDebug()<<"打开失败";
+        }
+    }
+    file->close();
 }
 
 
@@ -443,3 +464,5 @@ void MainClient::on_style_change_clicked()
     }
     file->close();
 }
+
+

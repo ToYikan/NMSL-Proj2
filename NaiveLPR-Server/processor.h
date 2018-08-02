@@ -36,7 +36,16 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/ml/ml.hpp"
 
+#define DIR "/Users/Haibara/Documents/qt build files2/Serverfiles"
+
+#define DIR_ANN_DEFAULT "/Users/Haibara/Documents/GitHub/NMSL-Proj2/NaiveLPR-Server"
+
+#define CONFIG_DIR "/Users/Haibara/Documents/qt build files2/Serverfiles/config.data"
+
+#define MODEL_DIR "/Users/Haibara/Documents/qt build files2/Serverfiles/model.data"
+
 using namespace cv;
+using namespace ml;
 //using namespace std;
 
 class Processor : public QObject

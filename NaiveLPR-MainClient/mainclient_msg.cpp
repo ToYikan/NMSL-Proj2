@@ -107,4 +107,20 @@ void MainClient::readMessage()
         }
     }
 
+    if(from == "setModel"){
+        QString msg;
+        in >> msg;
+        if(msg == "Done"){
+            QMessageBox::information(this,"提示", "\n修改模型成功！",QMessageBox::Ok);
+        }
+    }
+
+    if(from == "trainModel"){
+        QString msg;
+        in >> msg;
+        if(msg == "Done"){
+            QMessageBox::information(this,"提示", "\n模型训练成功！",QMessageBox::Ok);
+        }
+    }
+
 }
