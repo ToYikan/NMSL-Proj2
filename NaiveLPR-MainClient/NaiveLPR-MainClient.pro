@@ -17,6 +17,9 @@ TEMPLATE = app
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+INCLUDEPATH +=/usr/local/include
+LIBS +=-L/usr/local/lib -lopencv_imgproc -lopencv_core -lopencv_highgui -lopencv_imgcodecs -lopencv_ml
+
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -27,7 +30,9 @@ SOURCES += main.cpp\
         mainclient.cpp \
     forgetpassword.cpp \
     login.cpp \
-    mainclient_msg.cpp
+    mainclient_msg.cpp \
+    page_lpr1.cpp \
+    page_lpr2.cpp
 
 HEADERS  += mainclient.h \
     forgetpassword.h \

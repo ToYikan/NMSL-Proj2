@@ -105,6 +105,15 @@ void ForgetPassword::on_pushButton_3_clicked()
 
 void ForgetPassword::sendMessage(QStringList list)
 {
+    if(!(m_tcpsocket->state() == QAbstractSocket::ConnectedState)){
+        qDebug() << "Reconnecting......";
+        m_tcpsocket = new QTcpSocket(this);
+        m_tcpsocket->abort();
+        m_tcpsocket->connectToHost(QHostAddress::LocalHost,8848);//设置客户端的端口号
+        connect(m_tcpsocket,SIGNAL(readyRead()),
+                this,SLOT(readMessage()));//用于接受数据
+        m_tcpsocket->waitForConnected();
+    }
 
     QByteArray message;
     QDataStream out(&message,QIODevice::WriteOnly);

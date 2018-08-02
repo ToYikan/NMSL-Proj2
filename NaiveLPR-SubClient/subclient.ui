@@ -1406,7 +1406,7 @@ QPushButton:hover{
        <widget class="QLabel" name="label_21">
         <property name="geometry">
          <rect>
-          <x>516</x>
+          <x>498</x>
           <y>130</y>
           <width>18</width>
           <height>16</height>
@@ -1432,7 +1432,7 @@ QPushButton:hover{
        <widget class="QLabel" name="label_22">
         <property name="geometry">
          <rect>
-          <x>543</x>
+          <x>525</x>
           <y>127</y>
           <width>49</width>
           <height>21</height>
@@ -1465,7 +1465,7 @@ QPushButton:hover{
        <widget class="QLabel" name="label_23">
         <property name="geometry">
          <rect>
-          <x>506</x>
+          <x>498</x>
           <y>260</y>
           <width>18</width>
           <height>16</height>
@@ -1491,7 +1491,7 @@ QPushButton:hover{
        <widget class="QLabel" name="label_24">
         <property name="geometry">
          <rect>
-          <x>533</x>
+          <x>525</x>
           <y>257</y>
           <width>70</width>
           <height>21</height>

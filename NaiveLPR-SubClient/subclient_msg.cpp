@@ -4,6 +4,16 @@
 void SubClient::sendMessage(QStringList list)
 {
 
+    if(!(m_tcpsocket->state() == QAbstractSocket::ConnectedState)){
+        qDebug() << "Reconnecting......";
+        m_tcpsocket = new QTcpSocket(this);
+        m_tcpsocket->abort();
+        m_tcpsocket->connectToHost(QHostAddress::LocalHost,8848);//设置客户端的端口号
+        connect(m_tcpsocket,SIGNAL(readyRead()),
+                this,SLOT(readMessage()));//用于接受数据
+        m_tcpsocket->waitForConnected();
+    }
+
     QByteArray message;
     QDataStream out(&message,QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_7);
@@ -238,14 +248,14 @@ void SubClient::readMessage()
         ui->label_showNumber->setText(plate);
         ui->label_showProbability->setText(QString::number(rate));
 
-        download("/plates-r/" + plateName, "/plates-r/" + plateName);
+        download("/plates-d/" + plateName, "/plates-d/" + plateName);
 
         QElapsedTimer t;
         t.start();
         while(t.elapsed()<500)
             QCoreApplication::processEvents();
 
-        QImage tempPortrait(DIR + QString("/plates-r/") + plateName);
+        QImage tempPortrait(DIR + QString("/plates-d/") + plateName);
         QPixmap portrait = QPixmap::fromImage(tempPortrait.scaled(122, 42, Qt::KeepAspectRatio,
                                                                   Qt::SmoothTransformation));
         ui->label_showPlate->setPixmap(portrait);

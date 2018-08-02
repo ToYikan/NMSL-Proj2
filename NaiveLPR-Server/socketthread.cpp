@@ -2,6 +2,7 @@
 
 SocketThread::SocketThread(int id,QObject *parent):QThread()
 {
+    Q_UNUSED(parent);
     socketDescriptor=id;
 }
 void SocketThread::run ()

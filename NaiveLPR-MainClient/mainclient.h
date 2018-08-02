@@ -46,6 +46,18 @@
 #include <QDateTime>
 #include <QTime>
 #include <QDate>
+#include <QListView>
+
+#include "opencv2/opencv.hpp"
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/imgcodecs/imgcodecs.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/ml/ml.hpp"
+
+using namespace cv;
+using namespace std;
+using namespace ml;
 
 namespace Ui {
 class MainClient;
@@ -89,6 +101,24 @@ private slots:
 
     void on_welcome_button_clicked();
 
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_clearHistory_clicked();
+
+    void on_tableWidget_history_itemClicked(QTableWidgetItem *item);
+
+    void on_pushButton_lowProb_clicked();
+
+    void on_comboBox_selectType_currentTextChanged(const QString &arg1);
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_8_clicked();
+
+    bool eventFilter(QObject *watched, QEvent *event);
+
+    void on_pushButton_E_clicked();
+
 signals:
     void stringReturn(QString);
 
@@ -106,6 +136,11 @@ private:
 
     void progressBar_fast();
     void progressBar();
+
+    QVector<QStringList> lpr_history;
+
+    int processPhase;
+    QString fileNameForProcess;
 
 };
 

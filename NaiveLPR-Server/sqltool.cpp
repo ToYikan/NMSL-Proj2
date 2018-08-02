@@ -2,6 +2,18 @@
 
 
 /**
+ * connection state
+ *
+ * @author hzc
+ */
+
+bool SQLTool::connectionState(){
+    QSqlQuery query;
+    SQLTool::search(query, "userdata", "username", "koushizon");
+    return query.isActive();
+}
+
+/**
  * connect database
  *
  * @author hzc

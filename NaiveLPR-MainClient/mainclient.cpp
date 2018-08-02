@@ -22,7 +22,7 @@ MainClient::MainClient(QWidget *parent) :
     this->setAttribute(Qt::WA_TranslucentBackground);
     this->setStyleSheet("QFrame{border-radius:10px;}");
 
-    move(135,70);
+    move(120,60);
     on_welcome_button_clicked();
 
 }
@@ -62,6 +62,10 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
      * slow start
      *
      */
+
+    this->processPhase = 0;
+
+    ui->label_platePreview->installEventFilter(this);
 
 
     int fontId = QFontDatabase::addApplicationFont(":/font/fa-solid-900.ttf");
@@ -126,6 +130,10 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
                                       "QPushButton:hover{border: 0px; color: rgba(15, 128, 255, 190);}"
                                       "QPushButton:checked{border: 0px; color: rgba(15, 128, 255, 190);}");
 
+    ui->label_20->setFont(font);
+    ui->label_20->setText(QChar(0xf138));
+    ui->label_20->setStyleSheet("border: 0px; color: rgb(106, 106, 106);background:none;");
+
     style = false;
     QFile *file = new QFile(CONFIG_DIR);
     if(file->exists()){
@@ -167,8 +175,24 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
     ui->progressBar->setVisible(false);
 
 
+    ui->comboBox_selectType->setView(new QListView());
+    ui->comboBox_p0->setView(new QListView());
+    ui->comboBox_p1->setView(new QListView());
+    ui->comboBox_p2->setView(new QListView());
+    ui->comboBox_p3->setView(new QListView());
+    ui->comboBox_p4->setView(new QListView());
+    ui->comboBox_p5->setView(new QListView());
+    ui->comboBox_p6->setView(new QListView());
+
 
     ui->pushButton_switch->setEnabled(true);
+
+    ui->tableWidget_history->horizontalHeader()->setDefaultSectionSize(90);
+    ui->tableWidget_history->setColumnWidth(0, 190);
+    ui->tableWidget_history->setColumnWidth(3, 20);
+    ui->tableWidget_history->horizontalHeader()->setStretchLastSection(true);
+    ui->tableWidget_history->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget_history->setAlternatingRowColors(true);
 }
 
 
@@ -244,6 +268,17 @@ void MainClient::on_pushButton_D_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
+
+/**
+ * on_pushButton_E_clicked slot
+ *
+ * @author hzc
+ */
+void MainClient::on_pushButton_E_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
 
 /**
  * on_welcome_button_clicked slot
@@ -408,4 +443,3 @@ void MainClient::on_style_change_clicked()
     }
     file->close();
 }
-

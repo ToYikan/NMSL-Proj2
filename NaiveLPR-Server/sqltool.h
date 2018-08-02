@@ -12,6 +12,9 @@ public:
     //connect database
     static void connection();
 
+    //connection state
+    static bool connectionState();
+
     //disconnect database
     static void disconnection();
 
