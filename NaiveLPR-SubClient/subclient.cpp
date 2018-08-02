@@ -496,7 +496,7 @@ void SubClient::on_pushButton_EnterhighwayPic_clicked()
         return;
     }
 
-    QImage tempEnterPic = enterHighwayPic.at(0);
+    QImage tempEnterPic(enterHighwayPic.at(0));
     QPixmap EnterPic = QPixmap::fromImage(tempEnterPic.scaled(200, 200, Qt::KeepAspectRatio,
                                           Qt::SmoothTransformation));
     ui->label_EnterPicPath->setText(enterHighwayPic.at(0));
@@ -512,7 +512,7 @@ void SubClient::on_pushButton_leaveHighwayPic_clicked()
         return;
     }
 
-    QImage tempLeavePic = leaveHighwayPic.at(0);
+    QImage tempLeavePic(leaveHighwayPic.at(0));
     QPixmap LeavePic = QPixmap::fromImage(tempLeavePic.scaled(200, 200, Qt::KeepAspectRatio,
                                                               Qt::SmoothTransformation));
     ui->label_LeavePicPath->setText(leaveHighwayPic.at(0));

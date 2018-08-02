@@ -37,5 +37,52 @@ void MainClient::readMessage()
 
 
     }
+    //main client ETC page display ETC vehicles
+    if(from == "mc_ETCp_diaplayETCVehicles"){
+        ui->tableWidget_displayETCvehicleInfo->clear();
+       QVector<QStringList> result;
+       in >> result;
+       int i = 0;
+       for(QStringList list : result){
+           ui->tableWidget_displayETCvehicleInfo->insertRow(i);
+           ui->tableWidget_displayETCvehicleInfo->setItem(i, 0, new QTableWidgetItem(list.at(0)));
+           ui->tableWidget_displayETCvehicleInfo->setItem(i, 1, new QTableWidgetItem(list.at(1)));
+           i++;
+       }
+       ui->tableWidget_displayETCvehicleInfo->setRowCount(i);
+       progressBar();
+
+    }
+    //main client ETC page display all on road vehicles
+    if(from == "mc_ETCp_displayOnRoadVehicles"){
+        ui->tableWidget_displayETCvehicleInfo->clear();
+        QVector<QStringList> result;
+        in >> result;
+        int i = 0;
+        for(QStringList list : result){
+            ui->tableWidget_displayETCvehicleInfo->insertRow(i);
+            ui->tableWidget_displayETCvehicleInfo->setItem(i, 0, new QTableWidgetItem(list.at(0)));
+            ui->tableWidget_displayETCvehicleInfo->setItem(i, 1, new QTableWidgetItem(list.at(1)));
+            i++;
+        }
+        ui->tableWidget_displayETCvehicleInfo->setRowCount(i);
+        progressBar();
+    }
+    //main client display all pay history
+    if(from == "mc_ETCp_displayPayHistory"){
+        ui->tableWidget_displayETCPayHistory->clear();
+        QVector<QStringList> result;
+        in >> result;
+        int i = 0;
+        for(QStringList list : result){
+            ui->tableWidget_displayETCPayHistory->insertRow(i);
+            ui->tableWidget_displayETCPayHistory->setItem(i, 0, new QTableWidgetItem(list.at(0)));
+            ui->tableWidget_displayETCPayHistory->setItem(i, 1, new QTableWidgetItem(list.at(1)));
+            ui->tableWidget_displayETCPayHistory->setItem(i, 2, new QTableWidgetItem(list.at(2)));
+            i++;
+        }
+        ui->tableWidget_displayETCPayHistory->setRowCount(i);
+        progressBar();
+    }
 
 }

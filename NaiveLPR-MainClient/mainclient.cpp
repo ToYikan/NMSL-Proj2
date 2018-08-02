@@ -165,6 +165,21 @@ void MainClient::showString(QString s1, QString s2, QString s3, QString s4, QStr
 
 
     ui->pushButton_switch->setEnabled(true);
+
+
+    ui->tableWidget_displayETCPayHistory->setRowCount(0);
+    ui->tableWidget_displayETCPayHistory->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableWidget_displayETCPayHistory->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget_displayETCPayHistory->setAlternatingRowColors(true);
+    ui->tableWidget_displayETCPayHistory->verticalHeader()->setVisible(false);
+    ui->tableWidget_displayETCPayHistory->setStyleSheet("selection-background-color::lightblue");
+    ui->tableWidget_displayETCvehicleInfo->setRowCount(0);
+    ui->tableWidget_displayETCvehicleInfo->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableWidget_displayETCvehicleInfo->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget_displayETCvehicleInfo->setAlternatingRowColors(true);
+    ui->tableWidget_displayETCvehicleInfo->verticalHeader()->setVisible(false);
+    ui->tableWidget_displayETCvehicleInfo->setStyleSheet("selection-background-color::lightblue");
+
 }
 
 
@@ -538,4 +553,25 @@ void MainClient::on_style_change_clicked()
         qDebug()<<"打开失败";
     }
     file->close();
+}
+
+void MainClient::on_pushButton_diaplayETCvehicles_clicked()
+{
+    QStringList list;
+    list.append("mc_ETCp_displayETCVehicles");
+    sendMessage(list);
+}
+
+void MainClient::on_pushButton_diaplayEvehicleonroadTC_clicked()
+{
+    QStringList list;
+    list.append("mc_ETCp_displayOnRoadVehicles");
+    sendMessage(list);
+}
+
+void MainClient::on_pushButton_diaplayETCPayHistory_clicked()
+{
+    QStringList list;
+    list.append("mc_ETCp_displayPayHistory");
+    sendMessage(list);
 }

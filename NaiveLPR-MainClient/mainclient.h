@@ -89,6 +89,12 @@ private slots:
 
     void on_pushButton_quit_clicked();
 
+    void on_pushButton_diaplayETCvehicles_clicked();
+
+    void on_pushButton_diaplayEvehicleonroadTC_clicked();
+
+    void on_pushButton_diaplayETCPayHistory_clicked();
+
 signals:
     void stringReturn(QString);
 

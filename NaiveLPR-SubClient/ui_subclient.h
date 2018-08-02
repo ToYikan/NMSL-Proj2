@@ -100,7 +100,16 @@ public:
     QDateTimeEdit *dateTimeEdit_vehicleTarDateTime;
     QPushButton *pushButton_EnterhighwayPic;
     QPushButton *pushButton_leaveHighwayPic;
-    QLabel *label_withoutETCwarning;
+    QLabel *label_ETCPlateTip;
+    QLabel *label_ETCPlate;
+    QLabel *label_ETCCostTip;
+    QLabel *label_ETCCost;
+    QPushButton *pushButton_confirmEnterHighwayPic;
+    QPushButton *pushButton_confirmLeaveHighwayPic;
+    QLabel *label_EnterPicPath;
+    QLabel *label_LeavePicPath;
+    QPushButton *pushButton_enterHighwayPicPosition;
+    QPushButton *pushButton_leaveHighwayPicPosiotion;
     QProgressBar *progressBar_2;
 
     void setupUi(QMainWindow *SubClient)
@@ -926,7 +935,7 @@ public:
 ""));
         label_EnterHighwayTimeTip_2 = new QLabel(page_4);
         label_EnterHighwayTimeTip_2->setObjectName(QStringLiteral("label_EnterHighwayTimeTip_2"));
-        label_EnterHighwayTimeTip_2->setGeometry(QRect(250, 260, 140, 40));
+        label_EnterHighwayTimeTip_2->setGeometry(QRect(240, 260, 140, 40));
         label_EnterHighwayTimeTip_2->setStyleSheet(QLatin1String("QLabel{\n"
 "	background: none;\n"
 "	border-image:none;\n"
@@ -937,7 +946,7 @@ public:
 "}"));
         dateTimeEdit_vehicleFromDatetime = new QDateTimeEdit(page_4);
         dateTimeEdit_vehicleFromDatetime->setObjectName(QStringLiteral("dateTimeEdit_vehicleFromDatetime"));
-        dateTimeEdit_vehicleFromDatetime->setGeometry(QRect(240, 95, 140, 30));
+        dateTimeEdit_vehicleFromDatetime->setGeometry(QRect(240, 100, 140, 30));
         dateTimeEdit_vehicleFromDatetime->setStyleSheet(QString::fromUtf8("QdateTimeEdit{\n"
 "rgb(102, 255, 204);\n"
 "font: 57 9pt \"Helvetica-Narrow-Bold\";\n"
@@ -949,7 +958,7 @@ public:
 "}"));
         dateTimeEdit_vehicleTarDateTime = new QDateTimeEdit(page_4);
         dateTimeEdit_vehicleTarDateTime->setObjectName(QStringLiteral("dateTimeEdit_vehicleTarDateTime"));
-        dateTimeEdit_vehicleTarDateTime->setGeometry(QRect(250, 345, 140, 30));
+        dateTimeEdit_vehicleTarDateTime->setGeometry(QRect(240, 345, 140, 30));
         dateTimeEdit_vehicleTarDateTime->setStyleSheet(QString::fromUtf8("QdateTimeEdit{\n"
 "rgb(102, 255, 204);\n"
 "font: 57 9pt \"Helvetica-Narrow-Bold\";\n"
@@ -979,7 +988,7 @@ public:
 "}"));
         pushButton_leaveHighwayPic = new QPushButton(page_4);
         pushButton_leaveHighwayPic->setObjectName(QStringLiteral("pushButton_leaveHighwayPic"));
-        pushButton_leaveHighwayPic->setGeometry(QRect(250, 420, 140, 40));
+        pushButton_leaveHighwayPic->setGeometry(QRect(240, 420, 140, 40));
         pushButton_leaveHighwayPic->setStyleSheet(QLatin1String("QPushButton{\n"
 "	border: 2px solid rgba(15, 128, 255, 193);\n"
 "	background:rgba(15, 128, 255, 93);\n"
@@ -995,10 +1004,10 @@ public:
 "	color: rgb(76, 76, 76);\n"
 "	font: 75 14pt \"Helvetica\" bold;\n"
 "}"));
-        label_withoutETCwarning = new QLabel(page_4);
-        label_withoutETCwarning->setObjectName(QStringLiteral("label_withoutETCwarning"));
-        label_withoutETCwarning->setGeometry(QRect(450, 10, 140, 40));
-        label_withoutETCwarning->setStyleSheet(QLatin1String("QLabel{\n"
+        label_ETCPlateTip = new QLabel(page_4);
+        label_ETCPlateTip->setObjectName(QStringLiteral("label_ETCPlateTip"));
+        label_ETCPlateTip->setGeometry(QRect(450, 10, 140, 40));
+        label_ETCPlateTip->setStyleSheet(QLatin1String("QLabel{\n"
 "	background: none;\n"
 "	border-image:none;\n"
 "	border-radius:7px;\n"
@@ -1007,6 +1016,120 @@ public:
 "	font: 75 15pt \"Helvetica\" bold;\n"
 "}\n"
 ""));
+        label_ETCPlate = new QLabel(page_4);
+        label_ETCPlate->setObjectName(QStringLiteral("label_ETCPlate"));
+        label_ETCPlate->setGeometry(QRect(450, 90, 140, 40));
+        label_ETCPlate->setStyleSheet(QLatin1String("QLabel{\n"
+"	background: none;\n"
+"	border-image:none;\n"
+"	border-radius:7px;\n"
+"	border: 2px solid rgb(179, 179, 179);\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 15pt \"Helvetica\" bold;\n"
+"}\n"
+""));
+        label_ETCCostTip = new QLabel(page_4);
+        label_ETCCostTip->setObjectName(QStringLiteral("label_ETCCostTip"));
+        label_ETCCostTip->setGeometry(QRect(450, 170, 140, 40));
+        label_ETCCostTip->setStyleSheet(QLatin1String("QLabel{\n"
+"	background: none;\n"
+"	border-image:none;\n"
+"	border-radius:7px;\n"
+"	border: 2px solid rgb(179, 179, 179);\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 15pt \"Helvetica\" bold;\n"
+"}\n"
+""));
+        label_ETCCost = new QLabel(page_4);
+        label_ETCCost->setObjectName(QStringLiteral("label_ETCCost"));
+        label_ETCCost->setGeometry(QRect(450, 260, 140, 40));
+        label_ETCCost->setStyleSheet(QLatin1String("QLabel{\n"
+"	background: none;\n"
+"	border-image:none;\n"
+"	border-radius:7px;\n"
+"	border: 2px solid rgb(179, 179, 179);\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 15pt \"Helvetica\" bold;\n"
+"}\n"
+""));
+        pushButton_confirmEnterHighwayPic = new QPushButton(page_4);
+        pushButton_confirmEnterHighwayPic->setObjectName(QStringLiteral("pushButton_confirmEnterHighwayPic"));
+        pushButton_confirmEnterHighwayPic->setGeometry(QRect(130, 215, 70, 40));
+        pushButton_confirmEnterHighwayPic->setStyleSheet(QLatin1String("QPushButton{\n"
+"	border: 2px solid rgb(179, 179, 179);\n"
+"	border-radius:10px;\n"
+"	background:rgba(248, 248, 248,220);\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 14pt \"Helvetica\" bold ;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 2px solid rgb(15, 128, 255);\n"
+"	background:rgba(15, 128, 255, 43);\n"
+"	border-radius:10px;\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 14pt \"Helvetica\" bold;\n"
+"}"));
+        pushButton_confirmLeaveHighwayPic = new QPushButton(page_4);
+        pushButton_confirmLeaveHighwayPic->setObjectName(QStringLiteral("pushButton_confirmLeaveHighwayPic"));
+        pushButton_confirmLeaveHighwayPic->setGeometry(QRect(130, 463, 70, 40));
+        pushButton_confirmLeaveHighwayPic->setStyleSheet(QLatin1String("QPushButton{\n"
+"	border: 2px solid rgb(179, 179, 179);\n"
+"	border-radius:10px;\n"
+"	background:rgba(248, 248, 248,220);\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 14pt \"Helvetica\" bold ;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 2px solid rgb(15, 128, 255);\n"
+"	background:rgba(15, 128, 255, 43);\n"
+"	border-radius:10px;\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 14pt \"Helvetica\" bold;\n"
+"}"));
+        label_EnterPicPath = new QLabel(page_4);
+        label_EnterPicPath->setObjectName(QStringLiteral("label_EnterPicPath"));
+        label_EnterPicPath->setGeometry(QRect(120, 190, 72, 15));
+        label_LeavePicPath = new QLabel(page_4);
+        label_LeavePicPath->setObjectName(QStringLiteral("label_LeavePicPath"));
+        label_LeavePicPath->setGeometry(QRect(120, 440, 72, 15));
+        pushButton_enterHighwayPicPosition = new QPushButton(page_4);
+        pushButton_enterHighwayPicPosition->setObjectName(QStringLiteral("pushButton_enterHighwayPicPosition"));
+        pushButton_enterHighwayPicPosition->setGeometry(QRect(20, 215, 70, 40));
+        pushButton_enterHighwayPicPosition->setStyleSheet(QLatin1String("QPushButton{\n"
+"	border: 2px solid rgb(179, 179, 179);\n"
+"	border-radius:10px;\n"
+"	background:rgba(248, 248, 248,220);\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 14pt \"Helvetica\" bold ;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 2px solid rgb(15, 128, 255);\n"
+"	background:rgba(15, 128, 255, 43);\n"
+"	border-radius:10px;\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 14pt \"Helvetica\" bold;\n"
+"}"));
+        pushButton_leaveHighwayPicPosiotion = new QPushButton(page_4);
+        pushButton_leaveHighwayPicPosiotion->setObjectName(QStringLiteral("pushButton_leaveHighwayPicPosiotion"));
+        pushButton_leaveHighwayPicPosiotion->setGeometry(QRect(20, 463, 70, 40));
+        pushButton_leaveHighwayPicPosiotion->setStyleSheet(QLatin1String("QPushButton{\n"
+"	border: 2px solid rgb(179, 179, 179);\n"
+"	border-radius:10px;\n"
+"	background:rgba(248, 248, 248,220);\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 14pt \"Helvetica\" bold ;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 2px solid rgb(15, 128, 255);\n"
+"	background:rgba(15, 128, 255, 43);\n"
+"	border-radius:10px;\n"
+"	color: rgb(76, 76, 76);\n"
+"	font: 75 14pt \"Helvetica\" bold;\n"
+"}"));
         stackedWidget_2->addWidget(page_4);
         progressBar_2 = new QProgressBar(frame);
         progressBar_2->setObjectName(QStringLiteral("progressBar_2"));
@@ -1090,7 +1213,16 @@ public:
         label_EnterHighwayTimeTip_2->setText(QApplication::translate("SubClient", "Enter highway time:", Q_NULLPTR));
         pushButton_EnterhighwayPic->setText(QApplication::translate("SubClient", "Enter highway picture", Q_NULLPTR));
         pushButton_leaveHighwayPic->setText(QApplication::translate("SubClient", "Leave highway picture", Q_NULLPTR));
-        label_withoutETCwarning->setText(QApplication::translate("SubClient", "Enter highway time:", Q_NULLPTR));
+        label_ETCPlateTip->setText(QApplication::translate("SubClient", "Plate:", Q_NULLPTR));
+        label_ETCPlate->setText(QString());
+        label_ETCCostTip->setText(QApplication::translate("SubClient", "Cost:", Q_NULLPTR));
+        label_ETCCost->setText(QString());
+        pushButton_confirmEnterHighwayPic->setText(QApplication::translate("SubClient", "Confirm", Q_NULLPTR));
+        pushButton_confirmLeaveHighwayPic->setText(QApplication::translate("SubClient", "Confirm", Q_NULLPTR));
+        label_EnterPicPath->setText(QString());
+        label_LeavePicPath->setText(QString());
+        pushButton_enterHighwayPicPosition->setText(QApplication::translate("SubClient", "Map", Q_NULLPTR));
+        pushButton_leaveHighwayPicPosiotion->setText(QApplication::translate("SubClient", "Map", Q_NULLPTR));
     } // retranslateUi
 
 };

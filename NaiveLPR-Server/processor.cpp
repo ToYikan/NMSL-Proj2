@@ -131,6 +131,155 @@ void Processor::work ()
         }
     }
 
+    //ETCpage send enter_highway_pic
+    if(function == "ETCp_sendEnterPic"){
+        QString filename = list.at(0);
+
+        QString plateName = filename.split(".").at(0) + "-plate.jpg";
+
+        QString tempPath = DIR + QString("/plates/") + filename;
+
+        Mat srcImage = imread(tempPath.toStdString(), 1);
+
+        Mat midImage;
+
+        bool isPlateETCAvailable;
+
+        QSqlQuery query;
+
+        midImage = PlateDetection::process(srcImage);
+
+        if(midImage.rows < 2 || midImage.cols < 2){
+            out << function;
+            out << QString("FAIL");
+        }else{
+            imwrite(tempPath.toStdString(), midImage);
+
+            Mat result = PlateRecognition::process(midImage);
+            vector<Mat> chars = CharSegment::process(midImage, result);
+            string plate = "";
+
+
+
+            for(int j = 0 ; j < 7 ; j++){
+                if(j == 0){
+                    vector<string> r = CharRecognition::process_ch(chars.at(j));
+                    plate += r.at(0);
+                }else if(j == 1){
+                    vector<string> r = CharRecognition::process_sp(chars.at(j));
+                    plate += r.at(0);
+                }else {
+                    vector<string> r = CharRecognition::process(chars.at(j));
+                    plate += r.at(0);
+                }
+            }
+
+            SQLTool::search(query, "plate", "ETCplates", "plate", QString::fromStdString(plate));
+            if(query.next()){
+                isPlateETCAvailable = true;
+            }else{
+                isPlateETCAvailable = false;
+            }
+
+            out << function;
+            out << plateName;
+            out << QString::fromStdString(plate);
+            out << isPlateETCAvailable;
+        }
+    }
+
+    //ETCpage send leave_highwat_pic
+    if(function == "ETCp_sendLeavePic"){
+        QString filename = list.at(0);
+
+        QString plateName = filename.split(".").at(0) + "-plate.jpg";
+
+        QString tempPath = DIR + QString("/plates/") + filename;
+
+        Mat srcImage = imread(tempPath.toStdString(), 1);
+
+        Mat midImage;
+
+        midImage = PlateDetection::process(srcImage);
+
+        if(midImage.rows < 2 || midImage.cols < 2){
+            out << function;
+            out << QString("FAIL");
+        }else {
+            imwrite(tempPath.toStdString(), midImage);
+
+            Mat result = PlateRecognition::process(midImage);
+            vector<Mat> chars = CharSegment::process(midImage, result);
+            string plate = "";
+
+            for(int j = 0 ; j < 7 ; j++){
+                if(j == 0){
+                    vector<string> r = CharRecognition::process_ch(chars.at(j));
+                    plate += r.at(0);
+                }else if(j == 1){
+                    vector<string> r = CharRecognition::process_sp(chars.at(j));
+                    plate += r.at(0);
+                }else {
+                    vector<string> r = CharRecognition::process(chars.at(j));
+                    plate += r.at(0);
+                }
+            }
+
+            out << function;
+            out << plateName;
+            out << QString::fromStdString(plate);
+
+
+
+        }
+    }
+    //main cient ETCpage display all ETC vehicles
+    if(function == "mc_ETCp_diaplay_ETCVehcles"){
+        QSqlQuery query;
+        QVector<QStringList> result;
+        SQLTool::search(query, "ETCplates");
+        QStringList list;
+        while (query.next()) {
+            list.clear();
+            list.append(query.value(0).toString());
+            list.append(query.value(1).toString());
+            result.append(list);
+        }
+        out << function;
+        out << result;
+    }
+    //main client ETCpage display all on road vehicles
+    if(function == "nc_ETCp_displayOnRoadVehicles"){
+        QSqlQuery query;
+        QVector<QStringList> result;
+        QStringList list;
+        SQLTool::search(query, "ETCplates", "on_highway", QString::number(1));
+        while (query.next()) {
+            list.clear();
+            list.append(query.value(0).toString());
+            list.append(query.value(1).toString());
+            result.append(list);
+        }
+        out << function;
+        out << result;
+    }
+    //main client ETCpage display pay history
+    if(function == "m_ETCp_displayPayHistory"){
+        QSqlQuery query;
+        QVector<QStringList> result;
+        QStringList list;
+        SQLTool::search(query, "ETChistoryPay");
+        while (query.next()) {
+            list.clear();
+            list.append(query.value(0).toString());
+            list.append(query.value(1).toString());
+            list.append(query.value(2).toString());
+            result.append(list);
+        }
+        out << function;
+        out << result;
+    }
+
 
 
 
